@@ -1,0 +1,40 @@
+   ???????????????????????????????????????? 11.1/11.1 MB 42.6 MB/s eta 0:00:00
+   ???????????????????????????????????????? 680.7/680.7 kB 41.3 MB/s eta 0:00:00
+   ???????????????????????????????????????? 555.1/555.1 kB 38.0 MB/s eta 0:00:00
+   ???????????????????????????????????????? 389.2/389.2 kB 29.5 MB/s eta 0:00:00
+   ???????????????????????????????????????? 3.2/3.2 MB 103.9 MB/s eta 0:00:00
+   ???????????????????????????????????????? 12.2/12.2 MB 53.3 MB/s eta 0:00:00
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.
+dask-cuda 26.2.0 requires numba-cuda<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+cuml-cu12 26.2.0 requires numba<0.62.0,>=0.60.0, but you have numba 0.65.1 which is incompatible.
+cuml-cu12 26.2.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+ucxx-cu12 0.48.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+cudf-cu12 26.2.1 requires numba<0.62.0,>=0.60.0, but you have numba 0.65.1 which is incompatible.
+cudf-cu12 26.2.1 requires numba-cuda[cu12]<0.23.0,>=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:   0%|          | 1/290 [00:00<01:25,  3.36it/s]Loading weights:  76%|????????  | 219/290 [00:00<00:00, 707.73it/s]Loading weights: 100%|??????????| 290/290 [00:00<00:00, 587.84it/s]
+=== PERPLEXITY on 20 x 4096-token fineweb-edu docs ===
+full attention      : 13.57
+sparse, untrained   : 13.62
+sparse + alignment  : 13.58
+gap recovered by alignment: 80%
+=== STRESS NIAH top2: SPARSE UNTRAINED ===
+   ctx | d=0.1 | d=0.3 | d=0.5 | d=0.7 | d=0.9
+  2048 |  100% |  100% |   67% |  100% |  100%
+  4096 |   67% |   33% |    0% |  100% |  100%
+  8192 |    0% |  100% |    0% |  100% |   33%
+=== STRESS NIAH top2: SPARSE + ALIGNMENT (ours) ===
+   ctx | d=0.1 | d=0.3 | d=0.5 | d=0.7 | d=0.9
+  2048 |  100% |   33% |   67% |  100% |  100%
+  4096 |   67% |   33% |    0% |  100% |  100%
+  8192 |    0% |  100% |   67% |  100% |    0%
+done
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 320440 bytes to __results__.html

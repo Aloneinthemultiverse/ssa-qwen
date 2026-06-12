@@ -39,10 +39,33 @@ python eval_niah.py --adapter ssa-qwen-lora-step1000   # trained sparse
 
 ## Results
 
-*(to be filled in after training)*
+Training: 1000 steps of LoRA alignment on a Kaggle T4 (fp16, seq len 2048,
+fineweb-edu). Alignment loss fell ~4x (0.22 -> 0.06); LM loss stable (~2.2-2.9).
 
-| Mode | NIAH @2k | @4k | @8k |
-|---|---|---|---|
-| Full attention (baseline) | | | |
-| Sparse, untrained | | | |
-| Sparse + SSA alignment | | | |
+**Passkey NIAH (1k-8k context, 5 depths, greedy decoding):**
+
+| Mode | @1k | @2k | @4k | @8k |
+|---|---|---|---|---|
+| Full attention (baseline) | 100% | 100% | 100% | 100% |
+| Sparse, untrained | 100% | 100% | 100% | 100% |
+| Sparse + SSA alignment | 100% | 100% | 100% | 100% |
+
+**Perplexity (20 x 4096-token fineweb-edu docs):**
+
+| Mode | PPL |
+|---|---|
+| Full attention | 13.57 |
+| Sparse, untrained | 13.62 |
+| Sparse + SSA alignment | 13.58 |
+
+**Findings.** The headline result is architectural: the sparse pattern
+(4 sink tokens + 256-token window + top-8 of 64-token blocks ~= 13% of keys at
+8k) preserves essentially all of full attention's behavior on this model
+*out of the box* — perfect passkey retrieval and a +0.05 PPL cost. Alignment
+training recovered ~80% of that (small) perplexity gap, consistent with the
+SSA paper's direction, though the absolute gap is near the noise floor at this
+scale. A stress test with a top-2 block budget degraded both sparse variants
+similarly. Honest limitation: at 4-8k context on a 0.5B model, sparsity is
+nearly free, so there is little gap for alignment training to close; the
+interesting regime (32k+) needs a memory-efficient sparse kernel rather than
+this dense-mask simulation.
