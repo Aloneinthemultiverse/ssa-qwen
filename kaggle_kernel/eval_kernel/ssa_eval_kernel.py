@@ -74,10 +74,19 @@ def ssa_sparse_attention(module, query, key, value, attention_mask, scaling=None
         attn = F.scaled_dot_product_attention(
             query, key, value, attn_mask=bias, dropout_p=dropout, scale=scaling)
     else:
+        if attention_mask is not None:
+            full_mask = attention_mask[..., : key.shape[2]]
+        else:
+            # explicit bottom-right-aligned causal mask: is_causal aligns top-left
+            # when q_len < kv_len (decoding), which would blind the model
+            q_len, kv_len = query.shape[2], key.shape[2]
+            q_pos = torch.arange(kv_len - q_len, kv_len, device=query.device)
+            k_pos = torch.arange(kv_len, device=query.device)
+            allow = k_pos[None, :] <= q_pos[:, None]
+            full_mask = torch.zeros(q_len, kv_len, dtype=query.dtype, device=query.device)
+            full_mask.masked_fill_(~allow, torch.finfo(query.dtype).min)
         attn = F.scaled_dot_product_attention(
-            query, key, value,
-            attn_mask=attention_mask[..., : key.shape[2]] if attention_mask is not None else None,
-            dropout_p=dropout, scale=scaling, is_causal=attention_mask is None)
+            query, key, value, attn_mask=full_mask, dropout_p=dropout, scale=scaling)
     return attn.transpose(1, 2).contiguous(), None
 
 
@@ -90,7 +99,12 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
 MODEL = "Qwen/Qwen2.5-0.5B"
-ADAPTER = "/kaggle/input/ssa-qwen-lora"
+import glob, os
+hits = glob.glob("/kaggle/input/**/adapter_config.json", recursive=True)
+print("input tree:", glob.glob("/kaggle/input/*") + glob.glob("/kaggle/input/*/*"))
+assert hits, "adapter_config.json not found anywhere under /kaggle/input"
+ADAPTER = os.path.dirname(hits[0])
+print("using adapter at:", ADAPTER)
 CONTEXT_LENS = [1024, 2048, 4096, 8192]
 DEPTHS = [0.1, 0.3, 0.5, 0.7, 0.9]
 TRIALS = 3
@@ -126,15 +140,18 @@ def run_grid(label, sparse, adapters):
                 hits = 0
                 for _ in range(TRIALS):
                     key = str(random.randint(10000, 99999))
-                    needle = f" The secret passkey is {key}. Remember it. "
-                    body = FILLER * (ctx_len // 8)
-                    cut = int(len(body) * depth)
-                    prompt = body[:cut] + needle + body[cut:]
-                    prompt = tokenizer.decode(tokenizer(prompt).input_ids[: ctx_len - 30])
-                    prompt += "\nQuestion: What is the secret passkey?\nAnswer: The secret passkey is"
-                    ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
+                    needle_ids = tokenizer(f" The secret passkey is {key}. Remember it. ").input_ids
+                    q_ids = tokenizer("\nQuestion: What is the secret passkey?\nAnswer: The secret passkey is").input_ids
+                    filler_ids = tokenizer(FILLER).input_ids
+                    budget = ctx_len - len(needle_ids) - len(q_ids)
+                    body = (filler_ids * (budget // len(filler_ids) + 1))[:budget]
+                    cut = int(budget * depth)
+                    ids = body[:cut] + needle_ids + body[cut:] + q_ids
+                    ids = torch.tensor(ids).unsqueeze(0).to(device)
+                    attn_mask = torch.ones_like(ids)
                     with torch.no_grad():
-                        gen = model.generate(ids, max_new_tokens=8, do_sample=False,
+                        gen = model.generate(ids, attention_mask=attn_mask,
+                                             max_new_tokens=8, do_sample=False,
                                              pad_token_id=tokenizer.eos_token_id)
                     hits += key in tokenizer.decode(gen[0, ids.shape[1]:])
                 row.append(hits / TRIALS)

@@ -1,65 +1,132 @@
-[{"stream_name":"stdout","time":4.696591667,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 93.0 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":4.723683402,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 43.2 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":4.749199582,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 37.7 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":4.77288372,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 30.0 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":4.817083855,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 98.1 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":4.927023169,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 112.5 MB/s eta 0:00:00\n"}
-,{"stream_name":"stderr","time":20.589063922,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
-,{"stream_name":"stderr","time":20.589104621,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":20.589109745000002,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":20.589114091,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":20.589118058,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":20.589121961,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":20.589125843,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":20.589129566,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":20.589133978,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":33.924346386,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
-,{"stream_name":"stderr","time":39.774244528,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
-,{"stream_name":"stderr","time":39.77427988,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
-,{"stream_name":"stderr","time":39.774285856,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
-,{"stream_name":"stderr","time":39.774290527,"data":"    (7.0) - (12.0)\n"}
-,{"stream_name":"stderr","time":39.774295125,"data":"    \n"}
-,{"stream_name":"stderr","time":39.774299602,"data":"  queued_call()\n"}
-,{"stream_name":"stderr","time":39.774304128,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
-,{"stream_name":"stderr","time":39.774324026,"data":"    Please install PyTorch with a following CUDA\n"}
-,{"stream_name":"stderr","time":39.77432815,"data":"    configurations:  12.6 following instructions at\n"}
-,{"stream_name":"stderr","time":39.774331386,"data":"    https://pytorch.org/get-started/locally/\n"}
-,{"stream_name":"stderr","time":39.774334571,"data":"    \n"}
-,{"stream_name":"stderr","time":39.774337799,"data":"  queued_call()\n"}
-,{"stream_name":"stderr","time":39.774525816,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
-,{"stream_name":"stderr","time":39.774541593,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
-,{"stream_name":"stderr","time":39.774545074,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
-,{"stream_name":"stderr","time":39.774548514,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
-,{"stream_name":"stderr","time":39.774552486,"data":"\n"}
-,{"stream_name":"stderr","time":39.77455581,"data":"  queued_call()\n"}
-,{"stream_name":"stderr","time":44.848059976,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
-,{"stream_name":"stderr","time":52.507419135,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:  93%|█████████▎| 269/290 [00:00\u003c00:00, 2682.07it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 2735.14it/s]\n"}
-,{"stream_name":"stderr","time":53.329225602,"data":"Traceback (most recent call last):\n"}
-,{"stream_name":"stderr","time":53.329260239,"data":"  File \"/kaggle/src/script.py\", line 111, in \u003cmodule\u003e\n"}
-,{"stream_name":"stderr","time":53.329422038,"data":"    model = get_peft_model(model, lora)\n"}
-,{"stream_name":"stderr","time":53.329501979,"data":"            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":53.329574115,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/mapping_func.py\", line 122, in get_peft_model\n"}
-,{"stream_name":"stderr","time":53.329792008,"data":"    return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](\n"}
-,{"stream_name":"stderr","time":53.329822538,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":53.329886599,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/peft_model.py\", line 1955, in __init__\n"}
-,{"stream_name":"stderr","time":53.33038788,"data":"    super().__init__(model, peft_config, adapter_name, **kwargs)\n"}
-,{"stream_name":"stderr","time":53.330401819,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/peft_model.py\", line 132, in __init__\n"}
-,{"stream_name":"stderr","time":53.330582132,"data":"    self.base_model._cast_adapter_dtype(\n"}
-,{"stream_name":"stderr","time":53.330592157,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py\", line 599, in _cast_adapter_dtype\n"}
-,{"stream_name":"stderr","time":53.330844585,"data":"    cast_adapter_dtype(self.model, adapter_name=adapter_name, autocast_adapter_dtype=autocast_adapter_dtype)\n"}
-,{"stream_name":"stderr","time":53.33085553,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py\", line 2196, in cast_adapter_dtype\n"}
-,{"stream_name":"stderr","time":53.331500754,"data":"    param.data = param.data.to(torch.float32)\n"}
-,{"stream_name":"stderr","time":53.331548227,"data":"                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":53.331574081,"data":"torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device\n"}
-,{"stream_name":"stderr","time":53.331578728,"data":"Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\n"}
-,{"stream_name":"stderr","time":53.331583152,"data":"CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\n"}
-,{"stream_name":"stderr","time":53.331587254,"data":"For debugging consider passing CUDA_LAUNCH_BLOCKING=1\n"}
-,{"stream_name":"stderr","time":53.331591255,"data":"Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"}
-,{"stream_name":"stderr","time":53.331595138,"data":"\n"}
-,{"stream_name":"stderr","time":58.378532826,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
-,{"stream_name":"stderr","time":58.378567742,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
-,{"stream_name":"stderr","time":58.591895594,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
-,{"stream_name":"stderr","time":58.591931631,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
-,{"stream_name":"stderr","time":59.197819887,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
-,{"stream_name":"stderr","time":60.373957441,"data":"[NbConvertApp] Writing 304482 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":5.67960369,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 99.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.710758044,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 35.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.739432162,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 32.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.767019603,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 23.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.81147149,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 97.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.943897435,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 97.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":22.548516799,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":22.548615276,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.548623939,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.548634469,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.548638701,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.548642381,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.548645774,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.548649251,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.548652379,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":38.658022546,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":51.270853604,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":59.400081945,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:28,  3.27it/s]\rLoading weights:  80%|████████  | 232/290 [00:00\u003c00:00, 731.95it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 621.65it/s]\n"}
+,{"stream_name":"stdout","time":60.285959914,"data":"trainable params: 2,162,688 || all params: 496,195,456 || trainable%: 0.4359\n"}
+,{"stream_name":"stdout","time":132.761665497,"data":"step 10  lm 2.2106  align 0.2248\n"}
+,{"stream_name":"stdout","time":206.179545974,"data":"step 20  lm 2.6103  align 0.0558\n"}
+,{"stream_name":"stdout","time":279.060964637,"data":"step 30  lm 2.3863  align 0.0898\n"}
+,{"stream_name":"stdout","time":351.865050254,"data":"step 40  lm 2.7649  align 0.0710\n"}
+,{"stream_name":"stdout","time":424.659223513,"data":"step 50  lm 2.5418  align 0.0484\n"}
+,{"stream_name":"stdout","time":497.628599216,"data":"step 60  lm 2.3434  align 0.1844\n"}
+,{"stream_name":"stdout","time":570.655993868,"data":"step 70  lm 2.5240  align 0.0869\n"}
+,{"stream_name":"stdout","time":643.430184969,"data":"step 80  lm 3.0514  align 0.1497\n"}
+,{"stream_name":"stdout","time":716.379934451,"data":"step 90  lm 2.8502  align 0.1165\n"}
+,{"stream_name":"stdout","time":789.395997449,"data":"step 100  lm 2.2469  align 0.1942\n"}
+,{"stream_name":"stdout","time":862.291632057,"data":"step 110  lm 2.6058  align 0.0735\n"}
+,{"stream_name":"stdout","time":935.183958813,"data":"step 120  lm 2.8096  align 0.1376\n"}
+,{"stream_name":"stdout","time":1008.194632234,"data":"step 130  lm 2.2664  align 0.1428\n"}
+,{"stream_name":"stdout","time":1081.196050917,"data":"step 140  lm 3.1129  align 0.0543\n"}
+,{"stream_name":"stdout","time":1153.9955925,"data":"step 150  lm 3.0019  align 0.1380\n"}
+,{"stream_name":"stdout","time":1227.002317025,"data":"step 160  lm 2.0682  align 0.0773\n"}
+,{"stream_name":"stdout","time":1299.849687386,"data":"step 170  lm 2.4352  align 0.2558\n"}
+,{"stream_name":"stdout","time":1372.694850949,"data":"step 180  lm 2.6659  align 0.0507\n"}
+,{"stream_name":"stdout","time":1445.643853277,"data":"step 190  lm 2.6736  align 0.0400\n"}
+,{"stream_name":"stdout","time":1518.764844189,"data":"step 200  lm 2.6174  align 0.0462\n"}
+,{"stream_name":"stdout","time":1592.17121668,"data":"step 210  lm 2.0557  align 0.1680\n"}
+,{"stream_name":"stdout","time":1665.165114072,"data":"step 220  lm 2.4823  align 0.0365\n"}
+,{"stream_name":"stdout","time":1737.971158277,"data":"step 230  lm 2.7099  align 0.1473\n"}
+,{"stream_name":"stdout","time":1810.832506748,"data":"step 240  lm 2.4451  align 0.0640\n"}
+,{"stream_name":"stdout","time":1883.657907137,"data":"step 250  lm 2.9486  align 0.1068\n"}
+,{"stream_name":"stdout","time":1956.666299304,"data":"step 260  lm 2.5592  align 0.0563\n"}
+,{"stream_name":"stdout","time":2029.772272782,"data":"step 270  lm 2.6519  align 0.1449\n"}
+,{"stream_name":"stdout","time":2102.634444931,"data":"step 280  lm 2.4632  align 0.0644\n"}
+,{"stream_name":"stdout","time":2175.554825592,"data":"step 290  lm 3.3964  align 0.1032\n"}
+,{"stream_name":"stdout","time":2248.614611794,"data":"step 300  lm 2.7074  align 0.0689\n"}
+,{"stream_name":"stdout","time":2321.532293944,"data":"step 310  lm 3.1683  align 0.1034\n"}
+,{"stream_name":"stdout","time":2394.473132547,"data":"step 320  lm 2.4773  align 0.0661\n"}
+,{"stream_name":"stdout","time":2467.331899535,"data":"step 330  lm 3.2150  align 0.1195\n"}
+,{"stream_name":"stdout","time":2540.23275531,"data":"step 340  lm 2.6519  align 0.0368\n"}
+,{"stream_name":"stdout","time":2613.082659608,"data":"step 350  lm 2.8714  align 0.1546\n"}
+,{"stream_name":"stdout","time":2685.915716025,"data":"step 360  lm 2.9901  align 0.0474\n"}
+,{"stream_name":"stdout","time":2758.836247799,"data":"step 370  lm 3.1368  align 0.2029\n"}
+,{"stream_name":"stdout","time":2831.966070206,"data":"step 380  lm 2.6189  align 0.0730\n"}
+,{"stream_name":"stdout","time":2905.018070165,"data":"step 390  lm 2.4783  align 0.0872\n"}
+,{"stream_name":"stdout","time":2977.859106109,"data":"step 400  lm 2.4431  align 0.0564\n"}
+,{"stream_name":"stdout","time":3050.934742331,"data":"step 410  lm 2.5424  align 0.0606\n"}
+,{"stream_name":"stdout","time":3123.885170158,"data":"step 420  lm 2.4545  align 0.0776\n"}
+,{"stream_name":"stdout","time":3196.848620769,"data":"step 430  lm 3.2370  align 0.0287\n"}
+,{"stream_name":"stdout","time":3269.73174202,"data":"step 440  lm 2.8441  align 0.0643\n"}
+,{"stream_name":"stdout","time":3342.588676049,"data":"step 450  lm 2.7326  align 0.0835\n"}
+,{"stream_name":"stdout","time":3415.479761398,"data":"step 460  lm 2.5852  align 0.0570\n"}
+,{"stream_name":"stdout","time":3488.454298988,"data":"step 470  lm 2.3392  align 0.0366\n"}
+,{"stream_name":"stdout","time":3561.350329349,"data":"step 480  lm 2.1232  align 0.0702\n"}
+,{"stream_name":"stdout","time":3634.209614582,"data":"step 490  lm 2.3041  align 0.0780\n"}
+,{"stream_name":"stdout","time":3707.010849179,"data":"step 500  lm 2.9571  align 0.0456\n"}
+,{"stream_name":"stdout","time":3779.805727411,"data":"step 510  lm 2.3668  align 0.0750\n"}
+,{"stream_name":"stdout","time":3852.659208311,"data":"step 520  lm 2.7235  align 0.1376\n"}
+,{"stream_name":"stdout","time":3925.52136436,"data":"step 530  lm 2.7521  align 0.0543\n"}
+,{"stream_name":"stdout","time":3998.429863625,"data":"step 540  lm 2.3827  align 0.1239\n"}
+,{"stream_name":"stdout","time":4071.517728929,"data":"step 550  lm 2.6477  align 0.0722\n"}
+,{"stream_name":"stdout","time":4144.517754014,"data":"step 560  lm 3.0544  align 0.0625\n"}
+,{"stream_name":"stdout","time":4217.393433676,"data":"step 570  lm 2.6145  align 0.0362\n"}
+,{"stream_name":"stdout","time":4290.188948715,"data":"step 580  lm 2.2259  align 0.0690\n"}
+,{"stream_name":"stdout","time":4362.924517597,"data":"step 590  lm 2.4504  align 0.0648\n"}
+,{"stream_name":"stdout","time":4435.812215908,"data":"step 600  lm 2.9168  align 0.1474\n"}
+,{"stream_name":"stdout","time":4508.975267023,"data":"step 610  lm 2.8334  align 0.0434\n"}
+,{"stream_name":"stdout","time":4581.859067725,"data":"step 620  lm 3.4327  align 0.1673\n"}
+,{"stream_name":"stdout","time":4654.740472709,"data":"step 630  lm 3.1756  align 0.0546\n"}
+,{"stream_name":"stdout","time":4727.665719915,"data":"step 640  lm 2.9706  align 0.0437\n"}
+,{"stream_name":"stdout","time":4800.627304493,"data":"step 650  lm 2.6377  align 0.0452\n"}
+,{"stream_name":"stdout","time":4873.556342688,"data":"step 660  lm 2.9219  align 0.0506\n"}
+,{"stream_name":"stdout","time":4946.504692775,"data":"step 670  lm 2.7124  align 0.0682\n"}
+,{"stream_name":"stdout","time":5019.391309028,"data":"step 680  lm 3.0487  align 0.1075\n"}
+,{"stream_name":"stdout","time":5092.4535491,"data":"step 690  lm 2.5695  align 0.0590\n"}
+,{"stream_name":"stdout","time":5165.329825467,"data":"step 700  lm 2.8457  align 0.0718\n"}
+,{"stream_name":"stdout","time":5238.174907442,"data":"step 710  lm 2.5977  align 0.0741\n"}
+,{"stream_name":"stdout","time":5311.021576766,"data":"step 720  lm 3.1019  align 0.0458\n"}
+,{"stream_name":"stdout","time":5383.872965085,"data":"step 730  lm 2.7667  align 0.0796\n"}
+,{"stream_name":"stdout","time":5456.80364134,"data":"step 740  lm 2.8703  align 0.0599\n"}
+,{"stream_name":"stdout","time":5529.739901372,"data":"step 750  lm 2.6898  align 0.0586\n"}
+,{"stream_name":"stdout","time":5602.697894828,"data":"step 760  lm 2.8278  align 0.0370\n"}
+,{"stream_name":"stdout","time":5675.601793156,"data":"step 770  lm 2.6420  align 0.0870\n"}
+,{"stream_name":"stdout","time":5748.490116323,"data":"step 780  lm 3.1894  align 0.0691\n"}
+,{"stream_name":"stdout","time":5821.375435251,"data":"step 790  lm 2.7150  align 0.0700\n"}
+,{"stream_name":"stdout","time":5894.240580888,"data":"step 800  lm 2.0259  align 0.0472\n"}
+,{"stream_name":"stdout","time":5967.421716644,"data":"step 810  lm 2.7310  align 0.0420\n"}
+,{"stream_name":"stdout","time":6040.444102896,"data":"step 820  lm 2.3109  align 0.1323\n"}
+,{"stream_name":"stdout","time":6113.427782414,"data":"step 830  lm 3.0986  align 0.0970\n"}
+,{"stream_name":"stdout","time":6186.313922558,"data":"step 840  lm 2.7230  align 0.0586\n"}
+,{"stream_name":"stdout","time":6259.179042474,"data":"step 850  lm 2.3671  align 0.1143\n"}
+,{"stream_name":"stdout","time":6332.069643324,"data":"step 860  lm 2.9235  align 0.1626\n"}
+,{"stream_name":"stdout","time":6405.147274758,"data":"step 870  lm 2.6369  align 0.0453\n"}
+,{"stream_name":"stdout","time":6478.062662789,"data":"step 880  lm 2.4380  align 0.0597\n"}
+,{"stream_name":"stdout","time":6550.94067011,"data":"step 890  lm 2.4580  align 0.0668\n"}
+,{"stream_name":"stdout","time":6623.955654718,"data":"step 900  lm 2.8819  align 0.0559\n"}
+,{"stream_name":"stdout","time":6696.759520439,"data":"step 910  lm 3.2680  align 0.1293\n"}
+,{"stream_name":"stdout","time":6769.916404267,"data":"step 920  lm 2.8570  align 0.0612\n"}
+,{"stream_name":"stdout","time":6842.846780669,"data":"step 930  lm 2.9696  align 0.0386\n"}
+,{"stream_name":"stdout","time":6915.713371574,"data":"step 940  lm 2.9437  align 0.0660\n"}
+,{"stream_name":"stdout","time":6988.714098003,"data":"step 950  lm 2.6430  align 0.0303\n"}
+,{"stream_name":"stdout","time":7061.510603079,"data":"step 960  lm 2.5057  align 0.0740\n"}
+,{"stream_name":"stdout","time":7134.503985624,"data":"step 970  lm 2.8237  align 0.0952\n"}
+,{"stream_name":"stdout","time":7207.593412525,"data":"step 980  lm 2.0866  align 0.1016\n"}
+,{"stream_name":"stdout","time":7280.443485535,"data":"step 990  lm 2.7164  align 0.0599\n"}
+,{"stream_name":"stdout","time":7353.207162616,"data":"step 1000  lm 2.5175  align 0.0621\n"}
+,{"stream_name":"stdout","time":7354.754478486,"data":"done\n"}
+,{"stream_name":"stderr","time":7354.811150228,"data":"Got disconnected from remote data host. Retrying in 5sec [1/20]\n"}
+,{"stream_name":"stderr","time":7359.814469091,"data":"Fatal Python error: PyGILState_Release: auto-releasing thread-state, but no thread-state for this thread\n"}
+,{"stream_name":"stderr","time":7359.814531633,"data":"Python runtime state: finalizing (tstate=0x0000000000b8a5b0)\n"}
+,{"stream_name":"stderr","time":7359.814540074,"data":"\n"}
+,{"stream_name":"stderr","time":7360.238278257,"data":"Aborted (core dumped)\n"}
+,{"stream_name":"stderr","time":7362.382429374,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":7362.382479689,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":7362.65271518,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":7362.652764605,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":7363.311353995,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":7364.610928492,"data":"[NbConvertApp] Writing 305406 bytes to __results__.html\n"}
 ]

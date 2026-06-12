@@ -56,20 +56,17 @@ for ctx_len in CONTEXT_LENS:
         hits = 0
         for _ in range(TRIALS):
             key = str(random.randint(10000, 99999))
-            needle = f" The secret passkey is {key}. Remember it. "
+            needle_ids = tokenizer(f" The secret passkey is {key}. Remember it. ").input_ids
+            q_ids = tokenizer("\nQuestion: What is the secret passkey?\nAnswer: The secret passkey is").input_ids
             filler_ids = tokenizer(FILLER).input_ids
-            target = ctx_len - 80  # leave room for needle + question
-            n_rep = target // len(filler_ids) + 1
-            body = (FILLER * n_rep)
-            cut = int(len(body) * depth)
-            prompt = (
-                body[:cut] + needle + body[cut:]
-            )
-            prompt = tokenizer.decode(tokenizer(prompt).input_ids[: ctx_len - 30])
-            prompt += "\nQuestion: What is the secret passkey?\nAnswer: The secret passkey is"
-            ids = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
+            budget = ctx_len - len(needle_ids) - len(q_ids)
+            body = (filler_ids * (budget // len(filler_ids) + 1))[:budget]
+            cut = int(budget * depth)
+            ids = body[:cut] + needle_ids + body[cut:] + q_ids
+            ids = torch.tensor(ids).unsqueeze(0).to(device)
             with torch.no_grad():
-                gen = model.generate(ids, max_new_tokens=8, do_sample=False,
+                gen = model.generate(ids, attention_mask=torch.ones_like(ids),
+                                     max_new_tokens=8, do_sample=False,
                                      pad_token_id=tokenizer.eos_token_id)
             answer = tokenizer.decode(gen[0, ids.shape[1]:])
             hits += key in answer

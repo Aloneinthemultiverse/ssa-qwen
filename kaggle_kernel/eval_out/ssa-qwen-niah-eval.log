@@ -1,0 +1,55 @@
+[{"stream_name":"stdout","time":5.261595149,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 90.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.290215245,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 39.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.316752463,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 27.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.361635597,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 94.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.482051466,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 105.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":20.851025316,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":20.851073645,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.851079826,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.851084216,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.85108825,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.851091979,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.851103271,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.851112065,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.851114824,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":37.167189827,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stdout","time":47.673806513,"data":"input tree: ['/kaggle/input/datasets', '/kaggle/input/datasets/sujitnarrayanm']\n"}
+,{"stream_name":"stdout","time":47.673839235,"data":"using adapter at: /kaggle/input/datasets/sujitnarrayanm/ssa-qwen-lora\n"}
+,{"stream_name":"stderr","time":48.266781232,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":55.347983919,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:39,  2.91it/s]\rLoading weights:  92%|█████████▏| 267/290 [00:00\u003c00:00, 781.50it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 623.18it/s]\n"}
+,{"stream_name":"stdout","time":56.550788311,"data":"\n"}
+,{"stream_name":"stdout","time":56.550824009,"data":"=== FULL ATTENTION (baseline) ===\n"}
+,{"stream_name":"stdout","time":56.550848676,"data":"   ctx | d=0.1 | d=0.3 | d=0.5 | d=0.7 | d=0.9\n"}
+,{"stream_name":"stderr","time":56.642993963,"data":"[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.\n"}
+,{"stream_name":"stdout","time":61.611368181,"data":"  1024 |    0% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":66.52273584,"data":"  2048 |    0% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":73.78116189,"data":"  4096 |    0% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":86.808381517,"data":"  8192 |    0% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":86.811886939,"data":"\n"}
+,{"stream_name":"stdout","time":86.811910175,"data":"=== SPARSE, UNTRAINED ===\n"}
+,{"stream_name":"stdout","time":86.811927696,"data":"   ctx | d=0.1 | d=0.3 | d=0.5 | d=0.7 | d=0.9\n"}
+,{"stream_name":"stdout","time":93.536306091,"data":"  1024 |  100% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":103.636858882,"data":"  2048 |  100% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":126.15394511,"data":"  4096 |  100% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":198.827113629,"data":"  8192 |  100% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":198.830663181,"data":"\n"}
+,{"stream_name":"stdout","time":198.830731063,"data":"=== SPARSE + SSA ALIGNMENT (ours) ===\n"}
+,{"stream_name":"stdout","time":198.830738902,"data":"   ctx | d=0.1 | d=0.3 | d=0.5 | d=0.7 | d=0.9\n"}
+,{"stream_name":"stdout","time":207.315135423,"data":"  1024 |  100% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":219.701461747,"data":"  2048 |  100% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":245.485001212,"data":"  4096 |  100% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":321.478890897,"data":"  8192 |  100% |    0% |    0% |    0% |    0%\n"}
+,{"stream_name":"stdout","time":321.479179963,"data":"\n"}
+,{"stream_name":"stdout","time":321.479210388,"data":"=== SUMMARY (mean accuracy per context length) ===\n"}
+,{"stream_name":"stdout","time":321.479216473,"data":"   ctx |   full | sparse |   ours\n"}
+,{"stream_name":"stdout","time":321.479221763,"data":"  1024 |     0% |    20% |    20%\n"}
+,{"stream_name":"stdout","time":321.479226545,"data":"  2048 |     0% |    20% |    20%\n"}
+,{"stream_name":"stdout","time":321.47923126,"data":"  4096 |     0% |    20% |    20%\n"}
+,{"stream_name":"stdout","time":321.479236076,"data":"  8192 |     0% |    20% |    20%\n"}
+,{"stream_name":"stderr","time":326.464411517,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":326.464461925,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":326.72329432,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":326.723331969,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":327.353923781,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":328.624996599,"data":"[NbConvertApp] Writing 310843 bytes to __results__.html\n"}
+]

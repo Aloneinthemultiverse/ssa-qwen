@@ -89,10 +89,19 @@ def ssa_sparse_attention(module, query, key, value, attention_mask, scaling=None
             query, key, value, attn_mask=bias, dropout_p=dropout, scale=scaling
         )
     else:
+        if attention_mask is not None:
+            full_mask = attention_mask[..., : key.shape[2]]
+        else:
+            # explicit bottom-right-aligned causal mask: is_causal aligns top-left
+            # when q_len < kv_len (decoding), which would blind the model
+            q_len, kv_len = query.shape[2], key.shape[2]
+            q_pos = torch.arange(kv_len - q_len, kv_len, device=query.device)
+            k_pos = torch.arange(kv_len, device=query.device)
+            allow = k_pos[None, :] <= q_pos[:, None]
+            full_mask = torch.zeros(q_len, kv_len, dtype=query.dtype, device=query.device)
+            full_mask.masked_fill_(~allow, torch.finfo(query.dtype).min)
         attn = F.scaled_dot_product_attention(
-            query, key, value,
-            attn_mask=attention_mask[..., : key.shape[2]] if attention_mask is not None else None,
-            dropout_p=dropout, scale=scaling, is_causal=attention_mask is None,
+            query, key, value, attn_mask=full_mask, dropout_p=dropout, scale=scaling,
         )
 
     return attn.transpose(1, 2).contiguous(), None

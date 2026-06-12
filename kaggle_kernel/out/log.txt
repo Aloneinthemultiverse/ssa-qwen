@@ -1,9 +1,9 @@
-   ???????????????????????????????????????? 11.1/11.1 MB 93.0 MB/s eta 0:00:00
-   ???????????????????????????????????????? 680.7/680.7 kB 43.2 MB/s eta 0:00:00
-   ???????????????????????????????????????? 555.1/555.1 kB 37.7 MB/s eta 0:00:00
-   ???????????????????????????????????????? 389.2/389.2 kB 30.0 MB/s eta 0:00:00
-   ???????????????????????????????????????? 3.2/3.2 MB 98.1 MB/s eta 0:00:00
-   ???????????????????????????????????????? 12.2/12.2 MB 112.5 MB/s eta 0:00:00
+   ???????????????????????????????????????? 11.1/11.1 MB 99.7 MB/s eta 0:00:00
+   ???????????????????????????????????????? 680.7/680.7 kB 35.4 MB/s eta 0:00:00
+   ???????????????????????????????????????? 555.1/555.1 kB 32.1 MB/s eta 0:00:00
+   ???????????????????????????????????????? 389.2/389.2 kB 23.8 MB/s eta 0:00:00
+   ???????????????????????????????????????? 3.2/3.2 MB 97.6 MB/s eta 0:00:00
+   ???????????????????????????????????????? 12.2/12.2 MB 97.8 MB/s eta 0:00:00
 ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
 dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.
 dask-cuda 26.2.0 requires numba-cuda<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
@@ -14,47 +14,117 @@ ucxx-cu12 0.48.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-c
 cudf-cu12 26.2.1 requires numba<0.62.0,>=0.60.0, but you have numba 0.65.1 which is incompatible.
 cudf-cu12 26.2.1 requires numba-cuda[cu12]<0.23.0,>=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.
 Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
-/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning:
-    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.
-    Minimum and Maximum cuda capability supported by this version of PyTorch is
-    (7.0) - (12.0)
-  queued_call()
-/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning:
-    Please install PyTorch with a following CUDA
-    configurations:  12.6 following instructions at
-    https://pytorch.org/get-started/locally/
-  queued_call()
-/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning:
-Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.
-The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
-If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
-  queued_call()
 Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  93%|??????????| 269/290 [00:00<00:00, 2682.07it/s]Loading weights: 100%|??????????| 290/290 [00:00<00:00, 2735.14it/s]
-Traceback (most recent call last):
-  File "/kaggle/src/script.py", line 111, in <module>
-    model = get_peft_model(model, lora)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/dist-packages/peft/mapping_func.py", line 122, in get_peft_model
-    return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/usr/local/lib/python3.12/dist-packages/peft/peft_model.py", line 1955, in __init__
-    super().__init__(model, peft_config, adapter_name, **kwargs)
-  File "/usr/local/lib/python3.12/dist-packages/peft/peft_model.py", line 132, in __init__
-    self.base_model._cast_adapter_dtype(
-  File "/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py", line 599, in _cast_adapter_dtype
-    cast_adapter_dtype(self.model, adapter_name=adapter_name, autocast_adapter_dtype=autocast_adapter_dtype)
-  File "/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py", line 2196, in cast_adapter_dtype
-    param.data = param.data.to(torch.float32)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device
-Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
-CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
-For debugging consider passing CUDA_LAUNCH_BLOCKING=1
-Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:   0%|          | 1/290 [00:00<01:28,  3.27it/s]Loading weights:  80%|????????  | 232/290 [00:00<00:00, 731.95it/s]Loading weights: 100%|??????????| 290/290 [00:00<00:00, 621.65it/s]
+trainable params: 2,162,688 || all params: 496,195,456 || trainable%: 0.4359
+step 10  lm 2.2106  align 0.2248
+step 20  lm 2.6103  align 0.0558
+step 30  lm 2.3863  align 0.0898
+step 40  lm 2.7649  align 0.0710
+step 50  lm 2.5418  align 0.0484
+step 60  lm 2.3434  align 0.1844
+step 70  lm 2.5240  align 0.0869
+step 80  lm 3.0514  align 0.1497
+step 90  lm 2.8502  align 0.1165
+step 100  lm 2.2469  align 0.1942
+step 110  lm 2.6058  align 0.0735
+step 120  lm 2.8096  align 0.1376
+step 130  lm 2.2664  align 0.1428
+step 140  lm 3.1129  align 0.0543
+step 150  lm 3.0019  align 0.1380
+step 160  lm 2.0682  align 0.0773
+step 170  lm 2.4352  align 0.2558
+step 180  lm 2.6659  align 0.0507
+step 190  lm 2.6736  align 0.0400
+step 200  lm 2.6174  align 0.0462
+step 210  lm 2.0557  align 0.1680
+step 220  lm 2.4823  align 0.0365
+step 230  lm 2.7099  align 0.1473
+step 240  lm 2.4451  align 0.0640
+step 250  lm 2.9486  align 0.1068
+step 260  lm 2.5592  align 0.0563
+step 270  lm 2.6519  align 0.1449
+step 280  lm 2.4632  align 0.0644
+step 290  lm 3.3964  align 0.1032
+step 300  lm 2.7074  align 0.0689
+step 310  lm 3.1683  align 0.1034
+step 320  lm 2.4773  align 0.0661
+step 330  lm 3.2150  align 0.1195
+step 340  lm 2.6519  align 0.0368
+step 350  lm 2.8714  align 0.1546
+step 360  lm 2.9901  align 0.0474
+step 370  lm 3.1368  align 0.2029
+step 380  lm 2.6189  align 0.0730
+step 390  lm 2.4783  align 0.0872
+step 400  lm 2.4431  align 0.0564
+step 410  lm 2.5424  align 0.0606
+step 420  lm 2.4545  align 0.0776
+step 430  lm 3.2370  align 0.0287
+step 440  lm 2.8441  align 0.0643
+step 450  lm 2.7326  align 0.0835
+step 460  lm 2.5852  align 0.0570
+step 470  lm 2.3392  align 0.0366
+step 480  lm 2.1232  align 0.0702
+step 490  lm 2.3041  align 0.0780
+step 500  lm 2.9571  align 0.0456
+step 510  lm 2.3668  align 0.0750
+step 520  lm 2.7235  align 0.1376
+step 530  lm 2.7521  align 0.0543
+step 540  lm 2.3827  align 0.1239
+step 550  lm 2.6477  align 0.0722
+step 560  lm 3.0544  align 0.0625
+step 570  lm 2.6145  align 0.0362
+step 580  lm 2.2259  align 0.0690
+step 590  lm 2.4504  align 0.0648
+step 600  lm 2.9168  align 0.1474
+step 610  lm 2.8334  align 0.0434
+step 620  lm 3.4327  align 0.1673
+step 630  lm 3.1756  align 0.0546
+step 640  lm 2.9706  align 0.0437
+step 650  lm 2.6377  align 0.0452
+step 660  lm 2.9219  align 0.0506
+step 670  lm 2.7124  align 0.0682
+step 680  lm 3.0487  align 0.1075
+step 690  lm 2.5695  align 0.0590
+step 700  lm 2.8457  align 0.0718
+step 710  lm 2.5977  align 0.0741
+step 720  lm 3.1019  align 0.0458
+step 730  lm 2.7667  align 0.0796
+step 740  lm 2.8703  align 0.0599
+step 750  lm 2.6898  align 0.0586
+step 760  lm 2.8278  align 0.0370
+step 770  lm 2.6420  align 0.0870
+step 780  lm 3.1894  align 0.0691
+step 790  lm 2.7150  align 0.0700
+step 800  lm 2.0259  align 0.0472
+step 810  lm 2.7310  align 0.0420
+step 820  lm 2.3109  align 0.1323
+step 830  lm 3.0986  align 0.0970
+step 840  lm 2.7230  align 0.0586
+step 850  lm 2.3671  align 0.1143
+step 860  lm 2.9235  align 0.1626
+step 870  lm 2.6369  align 0.0453
+step 880  lm 2.4380  align 0.0597
+step 890  lm 2.4580  align 0.0668
+step 900  lm 2.8819  align 0.0559
+step 910  lm 3.2680  align 0.1293
+step 920  lm 2.8570  align 0.0612
+step 930  lm 2.9696  align 0.0386
+step 940  lm 2.9437  align 0.0660
+step 950  lm 2.6430  align 0.0303
+step 960  lm 2.5057  align 0.0740
+step 970  lm 2.8237  align 0.0952
+step 980  lm 2.0866  align 0.1016
+step 990  lm 2.7164  align 0.0599
+step 1000  lm 2.5175  align 0.0621
+done
+Got disconnected from remote data host. Retrying in 5sec [1/20]
+Fatal Python error: PyGILState_Release: auto-releasing thread-state, but no thread-state for this thread
+Python runtime state: finalizing (tstate=0x0000000000b8a5b0)
+Aborted (core dumped)
 /usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
   cells[i][c] = re.sub('\\\\\|', '|', cell)
 /usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
   text = re.sub(r'_', '\_', text) # Escape underscores in display text
 [NbConvertApp] Converting notebook __script__.ipynb to html
-[NbConvertApp] Writing 304482 bytes to __results__.html
+[NbConvertApp] Writing 305406 bytes to __results__.html
