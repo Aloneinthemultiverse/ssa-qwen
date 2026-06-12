@@ -1,0 +1,13 @@
+{
+  "id": "sujitnarrayanm/ssa-qwen-hard-eval",
+  "title": "SSA-Qwen hard eval: perplexity + stress NIAH",
+  "code_file": "ssa_eval2_kernel.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": ["sujitnarrayanm/ssa-qwen-lora"],
+  "competition_sources": [],
+  "kernel_sources": []
+}
