@@ -1,69 +1,65 @@
-[{"stream_name":"stdout","time":5.320658406,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 89.4 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.35688814,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 35.7 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.390708355,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 32.7 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.421845497,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 27.5 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.549734256,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 102.4 MB/s eta 0:00:00\n"}
-,{"stream_name":"stderr","time":21.651937639,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
-,{"stream_name":"stderr","time":21.651970256,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.651975739,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.651986748,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.651989788,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.651992631,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.651995627,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.651998471,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.652001208,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":49.643184424,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
-,{"stream_name":"stderr","time":59.066297962,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:  83%|████████▎ | 242/290 [00:00\u003c00:00, 2415.57it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 2480.10it/s]\n"}
-,{"stream_name":"stderr","time":59.32008429,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
-,{"stream_name":"stderr","time":59.320118735,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
-,{"stream_name":"stderr","time":59.320125069,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
-,{"stream_name":"stderr","time":59.320130543,"data":"    (7.0) - (12.0)\n"}
-,{"stream_name":"stderr","time":59.320135296,"data":"    \n"}
-,{"stream_name":"stderr","time":59.320140392,"data":"  queued_call()\n"}
-,{"stream_name":"stderr","time":59.320162215,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
-,{"stream_name":"stderr","time":59.320166914,"data":"    Please install PyTorch with a following CUDA\n"}
-,{"stream_name":"stderr","time":59.320171041,"data":"    configurations:  12.6 following instructions at\n"}
-,{"stream_name":"stderr","time":59.320174955,"data":"    https://pytorch.org/get-started/locally/\n"}
-,{"stream_name":"stderr","time":59.320178894,"data":"    \n"}
-,{"stream_name":"stderr","time":59.320183113,"data":"  queued_call()\n"}
-,{"stream_name":"stderr","time":59.320505593,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
-,{"stream_name":"stderr","time":59.320521082,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
-,{"stream_name":"stderr","time":59.32052549,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
-,{"stream_name":"stderr","time":59.320529323,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
-,{"stream_name":"stderr","time":59.320532931,"data":"\n"}
-,{"stream_name":"stderr","time":59.320536497,"data":"  queued_call()\n"}
-,{"stream_name":"stderr","time":59.790350461,"data":"Traceback (most recent call last):\n"}
-,{"stream_name":"stderr","time":59.790385925,"data":"  File \"/kaggle/src/script.py\", line 111, in \u003cmodule\u003e\n"}
-,{"stream_name":"stderr","time":59.790391972,"data":"    model = get_peft_model(model, lora)\n"}
-,{"stream_name":"stderr","time":59.790439487,"data":"            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":59.790482037,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/mapping_func.py\", line 122, in get_peft_model\n"}
-,{"stream_name":"stderr","time":59.790791393,"data":"    return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](\n"}
-,{"stream_name":"stderr","time":59.790806288,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":59.790832707,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/peft_model.py\", line 1955, in __init__\n"}
-,{"stream_name":"stderr","time":59.7913586,"data":"    super().__init__(model, peft_config, adapter_name, **kwargs)\n"}
-,{"stream_name":"stderr","time":59.791421228,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/peft_model.py\", line 129, in __init__\n"}
-,{"stream_name":"stderr","time":59.79164599,"data":"    self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)\n"}
-,{"stream_name":"stderr","time":59.791806815,"data":"                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":59.791838615,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py\", line 315, in __init__\n"}
-,{"stream_name":"stderr","time":59.792164345,"data":"    self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)\n"}
-,{"stream_name":"stderr","time":59.792178703,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py\", line 913, in inject_adapter\n"}
-,{"stream_name":"stderr","time":59.792542954,"data":"    self._create_and_replace(\n"}
-,{"stream_name":"stderr","time":59.792550288,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/model.py\", line 269, in _create_and_replace\n"}
-,{"stream_name":"stderr","time":59.792736779,"data":"    new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)\n"}
-,{"stream_name":"stderr","time":59.793104995,"data":"                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":59.793118989,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/model.py\", line 418, in _create_new_module\n"}
-,{"stream_name":"stderr","time":59.793339082,"data":"    new_module = dispatcher(target, adapter_name, config=lora_config, **kwargs)\n"}
-,{"stream_name":"stderr","time":59.793525826,"data":"                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":59.793553939,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/torchao.py\", line 142, in dispatch_torchao\n"}
-,{"stream_name":"stderr","time":59.793721109,"data":"    if not is_torchao_available():\n"}
-,{"stream_name":"stderr","time":59.793772155,"data":"           ^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":59.793810372,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/import_utils.py\", line 143, in is_torchao_available\n"}
-,{"stream_name":"stderr","time":59.793957487,"data":"    raise ImportError(\n"}
-,{"stream_name":"stderr","time":59.793963257,"data":"ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported\n"}
-,{"stream_name":"stderr","time":65.758119492,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
-,{"stream_name":"stderr","time":65.758149407,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
-,{"stream_name":"stderr","time":66.015471077,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
-,{"stream_name":"stderr","time":66.016879868,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
-,{"stream_name":"stderr","time":66.724267769,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
-,{"stream_name":"stderr","time":68.092486388,"data":"[NbConvertApp] Writing 304403 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":4.696591667,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 93.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":4.723683402,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 43.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":4.749199582,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 37.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":4.77288372,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 30.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":4.817083855,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 98.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":4.927023169,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 112.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":20.589063922,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":20.589104621,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.589109745000002,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.589114091,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.589118058,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.589121961,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.589125843,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.589129566,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.589133978,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":33.924346386,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":39.774244528,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":39.77427988,"data":"    Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.\n"}
+,{"stream_name":"stderr","time":39.774285856,"data":"    Minimum and Maximum cuda capability supported by this version of PyTorch is\n"}
+,{"stream_name":"stderr","time":39.774290527,"data":"    (7.0) - (12.0)\n"}
+,{"stream_name":"stderr","time":39.774295125,"data":"    \n"}
+,{"stream_name":"stderr","time":39.774299602,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":39.774304128,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":39.774324026,"data":"    Please install PyTorch with a following CUDA\n"}
+,{"stream_name":"stderr","time":39.77432815,"data":"    configurations:  12.6 following instructions at\n"}
+,{"stream_name":"stderr","time":39.774331386,"data":"    https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":39.774334571,"data":"    \n"}
+,{"stream_name":"stderr","time":39.774337799,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":39.774525816,"data":"/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning: \n"}
+,{"stream_name":"stderr","time":39.774541593,"data":"Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.\n"}
+,{"stream_name":"stderr","time":39.774545074,"data":"The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.\n"}
+,{"stream_name":"stderr","time":39.774548514,"data":"If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/\n"}
+,{"stream_name":"stderr","time":39.774552486,"data":"\n"}
+,{"stream_name":"stderr","time":39.77455581,"data":"  queued_call()\n"}
+,{"stream_name":"stderr","time":44.848059976,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":52.507419135,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:  93%|█████████▎| 269/290 [00:00\u003c00:00, 2682.07it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 2735.14it/s]\n"}
+,{"stream_name":"stderr","time":53.329225602,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":53.329260239,"data":"  File \"/kaggle/src/script.py\", line 111, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":53.329422038,"data":"    model = get_peft_model(model, lora)\n"}
+,{"stream_name":"stderr","time":53.329501979,"data":"            ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":53.329574115,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/mapping_func.py\", line 122, in get_peft_model\n"}
+,{"stream_name":"stderr","time":53.329792008,"data":"    return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](\n"}
+,{"stream_name":"stderr","time":53.329822538,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":53.329886599,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/peft_model.py\", line 1955, in __init__\n"}
+,{"stream_name":"stderr","time":53.33038788,"data":"    super().__init__(model, peft_config, adapter_name, **kwargs)\n"}
+,{"stream_name":"stderr","time":53.330401819,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/peft_model.py\", line 132, in __init__\n"}
+,{"stream_name":"stderr","time":53.330582132,"data":"    self.base_model._cast_adapter_dtype(\n"}
+,{"stream_name":"stderr","time":53.330592157,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py\", line 599, in _cast_adapter_dtype\n"}
+,{"stream_name":"stderr","time":53.330844585,"data":"    cast_adapter_dtype(self.model, adapter_name=adapter_name, autocast_adapter_dtype=autocast_adapter_dtype)\n"}
+,{"stream_name":"stderr","time":53.33085553,"data":"  File \"/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py\", line 2196, in cast_adapter_dtype\n"}
+,{"stream_name":"stderr","time":53.331500754,"data":"    param.data = param.data.to(torch.float32)\n"}
+,{"stream_name":"stderr","time":53.331548227,"data":"                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":53.331574081,"data":"torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device\n"}
+,{"stream_name":"stderr","time":53.331578728,"data":"Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.\n"}
+,{"stream_name":"stderr","time":53.331583152,"data":"CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.\n"}
+,{"stream_name":"stderr","time":53.331587254,"data":"For debugging consider passing CUDA_LAUNCH_BLOCKING=1\n"}
+,{"stream_name":"stderr","time":53.331591255,"data":"Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.\n"}
+,{"stream_name":"stderr","time":53.331595138,"data":"\n"}
+,{"stream_name":"stderr","time":58.378532826,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":58.378567742,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":58.591895594,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":58.591931631,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":59.197819887,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":60.373957441,"data":"[NbConvertApp] Writing 304482 bytes to __results__.html\n"}
 ]

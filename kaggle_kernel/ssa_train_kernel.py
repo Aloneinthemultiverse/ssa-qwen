@@ -98,7 +98,8 @@ LR = 1e-4
 ALIGN_WEIGHT = 1.0
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-dtype = torch.bfloat16 if device == "cuda" else torch.float32
+# float16 (not bfloat16): Kaggle T4s are sm_75, no native bf16 tensor cores
+dtype = torch.float16 if device == "cuda" else torch.float32
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL)
 model = AutoModelForCausalLM.from_pretrained(MODEL, dtype=dtype)
@@ -122,6 +123,7 @@ def batches():
             buf = buf[SEQ_LEN:]
 
 opt = torch.optim.AdamW(model.parameters(), lr=LR)
+scaler = torch.amp.GradScaler("cuda", enabled=device == "cuda")
 model.train()
 
 step, accum = 0, 0
@@ -134,13 +136,13 @@ for ids in batches():
 
     SPARSE_ENABLED = True
     out = model(ids, labels=ids, output_hidden_states=True)
-    align = F.mse_loss(out.hidden_states[-1], teacher)
+    align = F.mse_loss(out.hidden_states[-1].float(), teacher.float())
     loss = out.loss + ALIGN_WEIGHT * align
 
-    (loss / GRAD_ACCUM).backward()
+    scaler.scale(loss / GRAD_ACCUM).backward()
     accum += 1
     if accum == GRAD_ACCUM:
-        opt.step(); opt.zero_grad(); accum = 0
+        scaler.step(opt); scaler.update(); opt.zero_grad(); accum = 0
         step += 1
         if step % 10 == 0:
             print(f"step {step}  lm {out.loss.item():.4f}  align {align.item():.4f}", flush=True)
