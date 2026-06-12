@@ -1,0 +1,65 @@
+???????????????????????????????????????? 11.1/11.1 MB 89.4 MB/s eta 0:00:00
+???????????????????????????????????????? 680.7/680.7 kB 35.7 MB/s eta 0:00:00
+???????????????????????????????????????? 555.1/555.1 kB 32.7 MB/s eta 0:00:00
+???????????????????????????????????????? 389.2/389.2 kB 27.5 MB/s eta 0:00:00
+???????????????????????????????????????? 12.2/12.2 MB 102.4 MB/s eta 0:00:00
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.
+dask-cuda 26.2.0 requires numba-cuda<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+cuml-cu12 26.2.0 requires numba<0.62.0,>=0.60.0, but you have numba 0.65.1 which is incompatible.
+cuml-cu12 26.2.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+ucxx-cu12 0.48.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+cudf-cu12 26.2.1 requires numba<0.62.0,>=0.60.0, but you have numba 0.65.1 which is incompatible.
+cudf-cu12 26.2.1 requires numba-cuda[cu12]<0.23.0,>=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  83%|????????? | 242/290 [00:00<00:00, 2415.57it/s]Loading weights: 100%|??????????| 290/290 [00:00<00:00, 2480.10it/s]
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning:
+Found GPU0 Tesla P100-PCIE-16GB which is of cuda capability 6.0.
+Minimum and Maximum cuda capability supported by this version of PyTorch is
+(7.0) - (12.0)
+queued_call()
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning:
+Please install PyTorch with a following CUDA
+configurations:  12.6 following instructions at
+https://pytorch.org/get-started/locally/
+queued_call()
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:435: UserWarning:
+Tesla P100-PCIE-16GB with CUDA capability sm_60 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_70 sm_75 sm_80 sm_86 sm_90 sm_100 sm_120.
+If you want to use the Tesla P100-PCIE-16GB GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+queued_call()
+Traceback (most recent call last):
+File "/kaggle/src/script.py", line 111, in <module>
+model = get_peft_model(model, lora)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/usr/local/lib/python3.12/dist-packages/peft/mapping_func.py", line 122, in get_peft_model
+return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/usr/local/lib/python3.12/dist-packages/peft/peft_model.py", line 1955, in __init__
+super().__init__(model, peft_config, adapter_name, **kwargs)
+File "/usr/local/lib/python3.12/dist-packages/peft/peft_model.py", line 129, in __init__
+self.base_model = cls(model, {adapter_name: peft_config}, adapter_name)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py", line 315, in __init__
+self.inject_adapter(self.model, adapter_name, low_cpu_mem_usage=low_cpu_mem_usage, state_dict=state_dict)
+File "/usr/local/lib/python3.12/dist-packages/peft/tuners/tuners_utils.py", line 913, in inject_adapter
+self._create_and_replace(
+File "/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/model.py", line 269, in _create_and_replace
+new_module = self._create_new_module(lora_config, adapter_name, target, device_map=device_map, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/model.py", line 418, in _create_new_module
+new_module = dispatcher(target, adapter_name, config=lora_config, **kwargs)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "/usr/local/lib/python3.12/dist-packages/peft/tuners/lora/torchao.py", line 142, in dispatch_torchao
+if not is_torchao_available():
+^^^^^^^^^^^^^^^^^^^^^^
+File "/usr/local/lib/python3.12/dist-packages/peft/import_utils.py", line 143, in is_torchao_available
+raise ImportError(
+ImportError: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 304403 bytes to __results__.html

@@ -1,0 +1,13 @@
+{
+  "id": "sujitnarrayanm/ssa-qwen-alignment-train",
+  "title": "SSA-Qwen alignment train",
+  "code_file": "ssa_train_kernel.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": []
+}
