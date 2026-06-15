@@ -1,0 +1,53 @@
+[{"stream_name":"stdout","time":4.993506529,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 86.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.022027472,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 31.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.049441741,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 33.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.06858626,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 30.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.124944295,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 80.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.227798068,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 116.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":20.959710249,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":20.959769915,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.959774324,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.959778742,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.959782167,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.959785522,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.95978882,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.959791943,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.959795097,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.24503127,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":47.975140494,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":54.250677679,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:20,  3.59it/s]\rLoading weights:  76%|███████▌  | 221/290 [00:00\u003c00:00, 743.15it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 642.38it/s]\n"}
+,{"stream_name":"stdout","time":55.160819452,"data":"loading long docs...\n"}
+,{"stream_name":"stdout","time":58.795260321,"data":"\n"}
+,{"stream_name":"stdout","time":58.796436892,"data":"=== PERPLEXITY (8 docs per length) ===\n"}
+,{"stream_name":"stdout","time":58.796477029,"data":"   ctx |    full |  sparse |    ours | gap-recovered\n"}
+,{"stream_name":"stdout","time":118.717373377,"data":"  8192 |  14.070 |  14.210 |  14.150 |    43%\n"}
+,{"stream_name":"stdout","time":335.989025134,"data":" 16384 |  12.986 |  13.190 |  13.124 |    32%\n"}
+,{"stream_name":"stdout","time":1142.633687941,"data":" 32768 |  13.034 |  13.290 |  13.204 |    33%\n"}
+,{"stream_name":"stdout","time":1142.633751971,"data":"\n"}
+,{"stream_name":"stdout","time":1142.633756832,"data":"=== NIAH: FULL ===\n"}
+,{"stream_name":"stdout","time":1142.633760098,"data":"   ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":1147.755904412,"data":"  8192 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":1160.530812368,"data":" 16384 | 100% | 100% | 100%\n"}
+,{"stream_name":"stderr","time":1160.581224311,"data":"[transformers] This is a friendly reminder - the current text generation call has exceeded the model's predefined maximum length (32768). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.\n"}
+,{"stream_name":"stdout","time":1198.843013137,"data":" 32768 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":1198.843049854,"data":"\n"}
+,{"stream_name":"stdout","time":1198.843054162,"data":"=== NIAH: SPARSE UNTRAINED ===\n"}
+,{"stream_name":"stdout","time":1198.843058016,"data":"   ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":1219.953435568,"data":"  8192 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":1294.583024668,"data":" 16384 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":1577.007579429,"data":" 32768 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":1577.007655952,"data":"\n"}
+,{"stream_name":"stdout","time":1577.007663537,"data":"=== NIAH: SPARSE + ALIGNMENT (ours) ===\n"}
+,{"stream_name":"stdout","time":1577.00766948,"data":"   ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":1599.558574822,"data":"  8192 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":1675.650186124,"data":" 16384 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":1960.635910891,"data":" 32768 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":1960.635972348,"data":"\n"}
+,{"stream_name":"stdout","time":1960.635980016,"data":"done\n"}
+,{"stream_name":"stderr","time":1965.797145684,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1965.797186509,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1966.055745765,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1966.055773857,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1966.720938528,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1968.025347098,"data":"[NbConvertApp] Writing 325729 bytes to __results__.html\n"}
+]
