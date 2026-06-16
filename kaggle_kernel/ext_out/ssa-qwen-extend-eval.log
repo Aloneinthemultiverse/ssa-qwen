@@ -1,0 +1,47 @@
+[{"stream_name":"stdout","time":5.052602324,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 92.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.087262879,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 37.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.116343973,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 37.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.144439165,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 28.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.196091899,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 90.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.324829838,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 100.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":20.870969735,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":20.871014196,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.871022551,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.871026384,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.871029796,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.871032967,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.871036141,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.87103929,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.871042359,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":35.245347377,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":46.68425596,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":54.261968593,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":54.262008761,"data":"  File \"/kaggle/src/script.py\", line 115, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":54.262016783,"data":"    base = AutoModelForCausalLM.from_pretrained(MODEL, config=config, dtype=dtype)\n"}
+,{"stream_name":"stderr","time":54.262136904,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":54.263018633,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/models/auto/auto_factory.py\", line 406, in from_pretrained\n"}
+,{"stream_name":"stderr","time":54.263079368,"data":"    return model_class.from_pretrained(\n"}
+,{"stream_name":"stderr","time":54.26308512,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":54.263089252,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/modeling_utils.py\", line 4283, in from_pretrained\n"}
+,{"stream_name":"stderr","time":54.263477639,"data":"    model = cls(config, *model_args, **model_kwargs)\n"}
+,{"stream_name":"stderr","time":54.263605621,"data":"            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":54.263614826,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2/modeling_qwen2.py\", line 424, in __init__\n"}
+,{"stream_name":"stderr","time":54.263939163,"data":"    self.model = Qwen2Model(config)\n"}
+,{"stream_name":"stderr","time":54.263993301,"data":"                 ^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":54.264022341,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2/modeling_qwen2.py\", line 343, in __init__\n"}
+,{"stream_name":"stderr","time":54.264301787,"data":"    self.rotary_emb = Qwen2RotaryEmbedding(config=config)\n"}
+,{"stream_name":"stderr","time":54.264407207,"data":"                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":54.264415421,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2/modeling_qwen2.py\", line 65, in __init__\n"}
+,{"stream_name":"stderr","time":54.26464373,"data":"    inv_freq, self.attention_scaling = rope_init_fn(self.config, device)\n"}
+,{"stream_name":"stderr","time":54.264744372,"data":"                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":54.264806652,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/modeling_rope_utils.py\", line 446, in _compute_yarn_parameters\n"}
+,{"stream_name":"stderr","time":54.265088318,"data":"    pos_freqs = base ** (torch.arange(0, dim, 2).to(device=device, dtype=torch.float) / dim)\n"}
+,{"stream_name":"stderr","time":54.26533656,"data":"                ~~~~~^^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"}
+,{"stream_name":"stderr","time":54.265357878,"data":"TypeError: unsupported operand type(s) for ** or pow(): 'NoneType' and 'Tensor'\n"}
+,{"stream_name":"stderr","time":59.613974799,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":59.614002644,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":59.835870857,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":59.835914469,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":60.448822802,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":61.682707287,"data":"[NbConvertApp] Writing 316484 bytes to __results__.html\n"}
+]

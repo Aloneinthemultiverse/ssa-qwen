@@ -107,9 +107,12 @@ dtype = torch.float16 if device == "cuda" else torch.float32
 
 # YaRN RoPE scaling: extend native 32768 -> 131072 (factor 4)
 config = AutoConfig.from_pretrained(MODEL)
+if getattr(config, "rope_theta", None) is None:
+    config.rope_theta = 1000000.0  # Qwen2.5 default; YaRN init needs it non-None
 config.rope_scaling = {"rope_type": "yarn", "factor": 4.0,
                        "original_max_position_embeddings": 32768}
 config.max_position_embeddings = 131072
+print("rope_theta:", config.rope_theta, flush=True)
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL)
 base = AutoModelForCausalLM.from_pretrained(MODEL, config=config, dtype=dtype)
