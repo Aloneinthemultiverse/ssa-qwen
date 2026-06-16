@@ -1,35 +1,35 @@
-[{"stream_name":"stdout","time":5.58111999,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 56.2 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.612319364,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 38.0 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.640275641,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 34.6 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.670904554,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 24.5 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.722269343,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 89.1 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.864837853,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 89.8 MB/s eta 0:00:00\n"}
-,{"stream_name":"stderr","time":22.132761918,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
-,{"stream_name":"stderr","time":22.132791642,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.132797608,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.132802543,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.132807302,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.132811856,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.132816329,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.132820873,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.132825332,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":38.798796763,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
-,{"stream_name":"stderr","time":51.705497465,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
-,{"stream_name":"stderr","time":59.663403784,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:16,  3.76it/s]\rLoading weights:  71%|███████▏  | 207/290 [00:00\u003c00:00, 701.83it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 628.78it/s]\n"}
-,{"stream_name":"stdout","time":60.785991958,"data":"short adapter: /kaggle/input/datasets/sujitnarrayanm/ssa-qwen-lora-8k\n"}
-,{"stream_name":"stdout","time":60.786029507,"data":"long adapter : /kaggle/input/datasets/sujitnarrayanm/ssa-qwen-lora-8k\n"}
-,{"stream_name":"stdout","time":66.967193956,"data":"\n"}
-,{"stream_name":"stdout","time":66.967231549,"data":"=== PERPLEXITY (8 docs/length) ===\n"}
-,{"stream_name":"stdout","time":66.967237106,"data":"   ctx |    full |  untrnd |   2k-ad |   8k-ad | rec2k | rec8k\n"}
-,{"stream_name":"stdout","time":152.785452532,"data":"  8192 |  14.070 |  14.210 |  14.129 |  14.129 |   58% |   58%\n"}
-,{"stream_name":"stdout","time":473.930993873,"data":" 16384 |  12.986 |  13.190 |  13.097 |  13.097 |   46% |   46%\n"}
-,{"stream_name":"stdout","time":1674.236853448,"data":" 32768 |  13.034 |  13.290 |  13.168 |  13.168 |   47% |   47%\n"}
-,{"stream_name":"stdout","time":1674.23694259,"data":"\n"}
-,{"stream_name":"stdout","time":1674.236951426,"data":"done\n"}
-,{"stream_name":"stderr","time":1679.942847097,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
-,{"stream_name":"stderr","time":1679.942922465,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
-,{"stream_name":"stderr","time":1680.219412528,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
-,{"stream_name":"stderr","time":1680.21944416,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
-,{"stream_name":"stderr","time":1680.922272009,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
-,{"stream_name":"stderr","time":1682.315127082,"data":"[NbConvertApp] Writing 316899 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":5.189333991,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 94.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.225372135,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 42.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.255931221,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 35.7 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.287182936,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 28.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.347243608,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 74.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.484803685,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 93.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":21.487320685,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":21.487380359,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.487386733,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.487394056,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.487402193,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.487405743,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.487409188,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.487412551,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.487415892,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.353950385,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":48.785739826,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":56.395382735,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:44,  2.77it/s]\rLoading weights:  84%|████████▍ | 245/290 [00:00\u003c00:00, 683.32it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 564.01it/s]\n"}
+,{"stream_name":"stdout","time":57.748910219,"data":"short adapter: /kaggle/input/datasets/sujitnarrayanm/ssa-qwen-lora\n"}
+,{"stream_name":"stdout","time":57.748944403,"data":"long adapter : /kaggle/input/datasets/sujitnarrayanm/ssa-qwen-lora-8k\n"}
+,{"stream_name":"stdout","time":62.974188878,"data":"\n"}
+,{"stream_name":"stdout","time":62.974233486,"data":"=== PERPLEXITY (8 docs/length) ===\n"}
+,{"stream_name":"stdout","time":62.974237749,"data":"   ctx |    full |  untrnd |   2k-ad |   8k-ad | rec2k | rec8k\n"}
+,{"stream_name":"stdout","time":152.277912599,"data":"  8192 |  14.070 |  14.210 |  14.150 |  14.129 |   43% |   58%\n"}
+,{"stream_name":"stdout","time":477.876134855,"data":" 16384 |  12.986 |  13.190 |  13.124 |  13.097 |   32% |   46%\n"}
+,{"stream_name":"stdout","time":1691.470689667,"data":" 32768 |  13.034 |  13.290 |  13.204 |  13.168 |   33% |   47%\n"}
+,{"stream_name":"stdout","time":1691.470762514,"data":"\n"}
+,{"stream_name":"stdout","time":1691.470769772,"data":"done\n"}
+,{"stream_name":"stderr","time":1696.560202057,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1696.560232232,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1696.803113986,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1696.803141957,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1697.451399402,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1698.657734992,"data":"[NbConvertApp] Writing 316831 bytes to __results__.html\n"}
 ]

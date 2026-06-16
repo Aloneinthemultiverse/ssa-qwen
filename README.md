@@ -70,20 +70,30 @@ sparse attention, verified bit-identical to the dense reference):**
 NIAH passkey retrieval stays 100% for all three modes through 32k (benchmark
 saturated; the needle is too distinctive for top-k block selection to miss).
 
+**Train-length ablation (single run, both adapters loaded distinctly):**
+
+| context | full | untrained | 2k-adapter (rec.) | 8k-adapter (rec.) |
+|---|---|---|---|---|
+| 8k  | 14.07 | 14.21 | 14.15 (43%) | 14.13 (**58%**) |
+| 16k | 12.99 | 13.19 | 13.12 (32%) | 13.10 (**46%**) |
+| 32k | 13.03 | 13.29 | 13.20 (33%) | 13.17 (**47%**) |
+
 **Findings.**
 1. *The sparsity penalty grows with context length.* The full-vs-sparse PPL gap
    rises monotonically 0.14 -> 0.20 -> 0.26 as context goes 8k -> 16k -> 32k.
-   Near-noise at 8k, it is a clear, consistent gap by 32k.
-2. *Cheap alignment generalizes beyond its training length.* The LoRA adapter was
-   trained only at 2048 tokens, yet recovers ~1/3 of the penalty at 32k -- 16x
-   longer than it ever saw in training.
-3. *Passkey NIAH is the wrong long-context test here* -- it saturates at 100% for
+2. *Matching alignment train-length to test-length helps -- consistently.* An
+   adapter trained at 8k recovers more of the gap than one trained at 2k, at every
+   length (58 vs 43%, 46 vs 32%, 47 vs 33%; +14pts at 32k). Same model weights,
+   same eval, single run -- only the adapter's training context differs.
+3. *Cheap alignment generalizes well beyond its training length.* Even the
+   2k-trained adapter recovers ~1/3 of the penalty at 32k (16x its train length).
+4. *Passkey NIAH is the wrong long-context test here* -- it saturates at 100% for
    every mode; a multi-fact / QA task is needed to stress retrieval.
 
 **Honest limitations.** Single 0.5B model, single seed, 8 docs/length (no error
-bars yet). Absolute gaps are small (sub-0.3 PPL) -- this is a small model and the
-adapter was trained short. The natural next experiment: retrain the adapter at
-16k+ context and test whether recovery exceeds 33%. The attention is a chunked
-*dense-bias simulation* (memory-efficient, scales to 32k) -- it harvests the
-modeling behavior, not yet the FLOP savings; a fused gather kernel is the
-production step.
+bars yet). Absolute gaps are small (sub-0.3 PPL). The attention is a chunked
+*dense-bias simulation* (memory-efficient, verified bit-identical to the dense
+reference, scales to 32k) -- it harvests the modeling behavior, not yet the FLOP
+savings; a fused gather kernel is the production step. Next steps to harden into a
+claim: 2-3 seeds + 30+ docs for error bars; a second model size; a harder
+long-context task than passkey.
