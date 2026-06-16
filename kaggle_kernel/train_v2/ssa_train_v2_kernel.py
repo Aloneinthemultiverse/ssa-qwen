@@ -3,7 +3,7 @@
   #1-3 architecture: block 32 x top-32 (RF~1024), window 128 (in attention below)
   #4 bidirectional alignment: sparsity loss ||h_full - sg(h_sparse)|| +
      commitment loss ||h_sparse - sg(h_full)||  (both paths share the LoRA, both trainable)
-  #5 per-LAYER alignment (all hidden states), not just the final one
+  #5 RELAXED to final-layer (per-layer + grad-checkpointing errors on free GPU)
   #6 SmoothL1 loss, weight alpha=10 (paper default)
   #7 approximated: instead of random main-path, we run both paths every step and
      apply CE to both to keep them grounded (note: deviation from paper's prob-0.5 scheme)
@@ -161,20 +161,20 @@ for ids in batches():
     ids = ids.to(device)
     idx = torch.randperm(SEQ_LEN - 1, device=device)[:LM_SAMPLE]
 
-    # both paths share the LoRA and are trainable (paper's bidirectional setup)
+    # both paths share the LoRA and are trainable (paper's bidirectional setup).
+    # NOTE: output_hidden_states=True is incompatible with gradient checkpointing
+    # (recompute-mismatch error), so #5 is relaxed from per-layer to final-layer
+    # alignment -- the feasible version on a single free GPU.
     SPARSE_ENABLED = False
-    full_hs = backbone(input_ids=ids, output_hidden_states=True).hidden_states
+    full_last = backbone(input_ids=ids).last_hidden_state
     SPARSE_ENABLED = True
-    sparse_hs = backbone(input_ids=ids, output_hidden_states=True).hidden_states
+    sparse_last = backbone(input_ids=ids).last_hidden_state
 
-    # #4,#5,#6: bidirectional, per-layer, SmoothL1
-    align = 0.0
-    for hf, hs in zip(full_hs, sparse_hs):
-        align = align + F.smooth_l1_loss(hf.float(), hs.detach().float()) \
-                      + F.smooth_l1_loss(hs.float(), hf.detach().float())
-    align = align / len(full_hs)
+    # #4,#6: bidirectional SmoothL1 (final layer)
+    align = F.smooth_l1_loss(full_last.float(), sparse_last.detach().float()) \
+          + F.smooth_l1_loss(sparse_last.float(), full_last.detach().float())
 
-    lm = sampled_ce(sparse_hs[-1], ids, idx) + sampled_ce(full_hs[-1], ids, idx)
+    lm = sampled_ce(sparse_last, ids, idx) + sampled_ce(full_last, ids, idx)
     loss = lm + ALIGN_WEIGHT * align
 
     scaler.scale(loss / GRAD_ACCUM).backward()

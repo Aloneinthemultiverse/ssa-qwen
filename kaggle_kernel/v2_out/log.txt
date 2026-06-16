@@ -1,0 +1,125 @@
+   ???????????????????????????????????????? 11.2/11.2 MB 96.7 MB/s eta 0:00:00
+   ???????????????????????????????????????? 680.7/680.7 kB 36.0 MB/s eta 0:00:00
+   ???????????????????????????????????????? 555.1/555.1 kB 34.6 MB/s eta 0:00:00
+   ???????????????????????????????????????? 389.2/389.2 kB 30.3 MB/s eta 0:00:00
+   ???????????????????????????????????????? 3.2/3.2 MB 89.3 MB/s eta 0:00:00
+   ???????????????????????????????????????? 12.2/12.2 MB 100.7 MB/s eta 0:00:00
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.
+dask-cuda 26.2.0 requires numba-cuda<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+cuml-cu12 26.2.0 requires numba<0.62.0,>=0.60.0, but you have numba 0.65.1 which is incompatible.
+cuml-cu12 26.2.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+ucxx-cu12 0.48.0 requires numba-cuda[cu12]<0.23.0,>=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.
+cudf-cu12 26.2.1 requires numba<0.62.0,>=0.60.0, but you have numba 0.65.1 which is incompatible.
+cudf-cu12 26.2.1 requires numba-cuda[cu12]<0.23.0,>=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.
+Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch >= 2.11.0 (found 2.10.0+cu128).
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:   0%|          | 1/290 [00:00<01:50,  2.63it/s]Loading weights:  92%|??????????| 267/290 [00:00<00:00, 703.60it/s]Loading weights: 100%|??????????| 290/290 [00:00<00:00, 573.99it/s]
+trainable params: 2,162,688 || all params: 496,195,456 || trainable%: 0.4359
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+Traceback (most recent call last):
+  File "/kaggle/src/script.py", line 180, in <module>
+    scaler.scale(loss / GRAD_ACCUM).backward()
+  File "/usr/local/lib/python3.12/dist-packages/torch/_tensor.py", line 630, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/__init__.py", line 364, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py", line 865, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/checkpoint.py", line 1177, in unpack_hook
+    frame.check_recomputed_tensors_match(gid)
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/checkpoint.py", line 921, in check_recomputed_tensors_match
+    raise CheckpointError(
+torch.utils.checkpoint.CheckpointError: torch.utils.checkpoint: Recomputed values for the following tensors have different metadata than during the forward pass.
+tensor at position 27:
+saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([14, 64, 256]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 28:
+saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 29:
+saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 1, 512, 256]), 'dtype': torch.bool, 'device': device(type='cuda', index=0)}
+tensor at position 30:
+saved metadata: {'shape': torch.Size([1, 14, 8192]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 512, 32]), 'dtype': torch.int64, 'device': device(type='cuda', index=0)}
+tensor at position 31:
+saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 512, 8192]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 32:
+saved metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}
+recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 33:
+saved metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}
+recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 34:
+saved metadata: {'shape': torch.Size([896, 896]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 35:
+saved metadata: {'shape': torch.Size([1, 8192, 896]), 'dtype': torch.bool, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 512]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+tensor at position 36:
+saved metadata: {'shape': torch.Size([896, 16]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 37:
+saved metadata: {'shape': torch.Size([8192, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}
+tensor at position 38:
+saved metadata: {'shape': torch.Size([16, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}
+tensor at position 39:
+saved metadata: {'shape': torch.Size([8192, 16]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([14, 64, 256]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 40:
+saved metadata: {'shape': torch.Size([1, 8192, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 41:
+saved metadata: {'shape': torch.Size([1, 8192, 1]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 1, 512, 256]), 'dtype': torch.bool, 'device': device(type='cuda', index=0)}
+tensor at position 42:
+saved metadata: {'shape': torch.Size([1, 8192, 1]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 512, 32]), 'dtype': torch.int64, 'device': device(type='cuda', index=0)}
+tensor at position 43:
+saved metadata: {'shape': torch.Size([1, 8192, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 512, 8192]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 44:
+saved metadata: {'shape': torch.Size([896]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 45:
+saved metadata: {'shape': torch.Size([896, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 46:
+saved metadata: {'shape': torch.Size([1, 8192, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 47:
+saved metadata: {'shape': torch.Size([896, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 512]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}
+tensor at position 48:
+saved metadata: {'shape': torch.Size([1, 8192, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+tensor at position 49:
+saved metadata: {'shape': torch.Size([1, 8192, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}
+tensor at position 50:
+saved metadata: {'shape': torch.Size([4864, 896]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}
+recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}
+.
+Tip: To see a more detailed error message, either pass `debug=True` to
+`torch.utils.checkpoint.checkpoint(...)` or wrap the code block
+with `with torch.utils.checkpoint.set_checkpoint_debug_enabled(True):` to
+enable checkpoint?debug mode globally.
+'[Errno 9] Bad file descriptor' thrown while requesting GET https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/resolve/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/sample/10BT/000_00000.parquet
+Retrying in 1s [Retry 1/5].
+Fatal Python error: PyGILState_Release: thread state 0x7ef0fd621ee0 must be current when releasing
+Python runtime state: finalizing (tstate=0x0000000000b8a5b0)
+Thread 0x00007ef2c0d1d480 (most recent call first):
+  <no Python frame>
+Aborted (core dumped)
+/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\|'
+  cells[i][c] = re.sub('\\\\\|', '|', cell)
+/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\_'
+  text = re.sub(r'_', '\_', text) # Escape underscores in display text
+[NbConvertApp] Converting notebook __script__.ipynb to html
+[NbConvertApp] Writing 314676 bytes to __results__.html
