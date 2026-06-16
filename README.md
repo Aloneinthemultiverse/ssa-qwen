@@ -90,8 +90,25 @@ saturated; the needle is too distinctive for top-k block selection to miss).
 4. *Passkey NIAH is the wrong long-context test here* -- it saturates at 100% for
    every mode; a multi-fact / QA task is needed to stress retrieval.
 
-**Honest limitations.** Single 0.5B model, single seed, 8 docs/length (no error
-bars yet). Absolute gaps are small (sub-0.3 PPL). The attention is a chunked
+**Context extension past native 32k (YaRN x4 -> 128k; 4 docs/length):**
+
+| context | full | sparse-untrained | sparse + 8k-adapter |
+|---|---|---|---|
+| 32k  | 14.26 | 14.58 | 14.42 |
+| 64k  | 14.19 | 14.57 | 14.32 |
+| 128k | 14.90 | 14.99 | **14.69** |
+
+Aligned-sparse vs full: +0.16 (worse) at 32k -> +0.13 at 64k -> **-0.21 (better)
+at 128k**. The further the window is stretched past its trained limit, the more
+gracefully sparse degrades relative to full attention -- at 4x extension the
+SSA-aligned model overtakes full. Consistent with the Sub-Q/SSA claim that sparse
+attention is more robust to RoPE scaling. (Raw sparse-untrained stays slightly
+worse than full at all lengths -- the alignment adapter is what produces the
+crossover.)
+
+**Honest limitations.** Single 0.5B model, single seed, 8 docs/length (4 for the
+128k run; no error bars yet). Absolute gaps are small (sub-0.3 PPL), so the 128k
+crossover wants seed-repeats before it's load-bearing. The attention is a chunked
 *dense-bias simulation* (memory-efficient, verified bit-identical to the dense
 reference, scales to 32k) -- it harvests the modeling behavior, not yet the FLOP
 savings; a fused gather kernel is the production step. Next steps to harden into a
