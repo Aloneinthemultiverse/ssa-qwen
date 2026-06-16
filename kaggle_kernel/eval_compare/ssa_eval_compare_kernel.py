@@ -99,14 +99,11 @@ from contextlib import nullcontext
 MODEL = "Qwen/Qwen2.5-0.5B"
 
 
-def find_adapter(name_contains):
-    for p in glob.glob("/kaggle/input/**/adapter_config.json", recursive=True):
-        if name_contains in p:
-            return os.path.dirname(p)
-    raise FileNotFoundError(name_contains)
-
-SHORT = find_adapter("ssa-qwen-lora/") if glob.glob("/kaggle/input/ssa-qwen-lora/**/adapter_config.json", recursive=True) else find_adapter("lora")
-LONG = find_adapter("8k")
+all_adapters = [os.path.dirname(p) for p in
+                glob.glob("/kaggle/input/**/adapter_config.json", recursive=True)]
+LONG = next(p for p in all_adapters if "8k" in p)            # 8k-trained
+SHORT = next(p for p in all_adapters if "8k" not in p)       # 2k-trained
+assert SHORT != LONG, f"adapters collided: {all_adapters}"
 
 LENGTHS = [8192, 16384, 32768]
 N_DOCS = 8
