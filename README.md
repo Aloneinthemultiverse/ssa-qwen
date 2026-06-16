@@ -106,6 +106,26 @@ attention is more robust to RoPE scaling. (Raw sparse-untrained stays slightly
 worse than full at all lengths -- the alignment adapter is what produces the
 crossover.)
 
+**Buried-fact retrieval at extended context (passkey at start/mid/end, YaRN x4):**
+
+| context | full | sparse + 8k-adapter |
+|---|---|---|
+| 32k  | 100/100/100% | 100/100/100% |
+| 64k  | 100/100/100% | 100/**0**/100% |
+| 128k | 100/100/100% | 100/**0/0**% |
+
+*Key negative result.* Full attention retrieves the passkey everywhere. Sparse
+fails on **mid-document** needles once the window is stretched (64k+) and on
+mid+late needles at 128k. The needle is reliably found only when it falls in the
+attention **sink** (start, always visible) or the sliding **window** (very end);
+in between, retrieval depends on picking the one needle-bearing block out of
+~thousands, which fails at scale. Crucially this contradicts the perplexity story:
+*sparse stays fluent/coherent over the whole document (good PPL, even beating full
+at 128k) yet cannot reliably retrieve a specific buried fact.* Low perplexity !=
+working long-context retrieval. So this sparse pattern does NOT replace
+retrieval/RAG for needle-finding -- it keeps the document affordable and coherent,
+not searchable.
+
 **Honest limitations.** Single 0.5B model, single seed, 8 docs/length (4 for the
 128k run; no error bars yet). Absolute gaps are small (sub-0.3 PPL), so the 128k
 crossover wants seed-repeats before it's load-bearing. The attention is a chunked

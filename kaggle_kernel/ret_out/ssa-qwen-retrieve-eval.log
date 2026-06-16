@@ -1,0 +1,40 @@
+[{"stream_name":"stdout","time":5.600842147,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 74.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.634240974,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 42.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.668357247,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 21.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.724645168,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 82.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.875782049,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 81.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":21.535563741,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":21.535592089,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.53559789,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.535603197,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.535608167,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.535613151,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.535618345,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.535623234,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":21.535628241,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.628621321,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":47.264778516,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":55.526174965,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:28,  3.26it/s]\rLoading weights:  76%|███████▌  | 219/290 [00:00\u003c00:00, 676.44it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 586.36it/s]\n"}
+,{"stream_name":"stdout","time":56.796697839,"data":"adapter: /kaggle/input/datasets/sujitnarrayanm/ssa-qwen-lora-8k\n"}
+,{"stream_name":"stdout","time":56.830257333,"data":"\n"}
+,{"stream_name":"stdout","time":56.830297236,"data":"=== RETRIEVAL: FULL (YaRN x4) ===\n"}
+,{"stream_name":"stdout","time":56.830304546,"data":"    ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":93.366470647,"data":"  32768 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":227.24393685,"data":"  65536 | 100% | 100% | 100%\n"}
+,{"stream_name":"stderr","time":227.320351548,"data":"[transformers] This is a friendly reminder - the current text generation call has exceeded the model's predefined maximum length (131072). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.\n"}
+,{"stream_name":"stdout","time":744.81207969,"data":" 131072 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":744.812126207,"data":"\n"}
+,{"stream_name":"stdout","time":744.812131869,"data":"=== RETRIEVAL: SPARSE + 8k-adapter (YaRN x4) ===\n"}
+,{"stream_name":"stdout","time":744.812136599,"data":"    ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":1047.3215156,"data":"  32768 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":2199.667087576,"data":"  65536 | 100% |   0% | 100%\n"}
+,{"stream_name":"stdout","time":6731.256929825,"data":" 131072 | 100% |   0% |   0%\n"}
+,{"stream_name":"stdout","time":6731.257006199,"data":"\n"}
+,{"stream_name":"stdout","time":6731.257012766,"data":"done\n"}
+,{"stream_name":"stderr","time":6736.407387017,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":6736.407438505,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":6736.659934624,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":6736.659970385,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":6737.288485819,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":6738.540339738,"data":"[NbConvertApp] Writing 313424 bytes to __results__.html\n"}
+]
