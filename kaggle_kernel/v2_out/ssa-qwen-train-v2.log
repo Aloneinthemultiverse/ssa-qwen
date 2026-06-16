@@ -1,129 +1,126 @@
-[{"stream_name":"stdout","time":5.856829288,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 96.7 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.893660961,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 36.0 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.924985303,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 34.6 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.956907227,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 30.3 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":6.010840791,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 89.3 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":6.142310961,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 100.7 MB/s eta 0:00:00\n"}
-,{"stream_name":"stderr","time":22.354878164,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
-,{"stream_name":"stderr","time":22.354938812,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.354946061,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.354951805,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.354956696,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.354961418,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.354965981,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.354970383,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":22.354980311,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":37.9308958,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
-,{"stream_name":"stderr","time":50.106138773,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
-,{"stream_name":"stderr","time":58.633616541,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:50,  2.63it/s]\rLoading weights:  92%|█████████▏| 267/290 [00:00\u003c00:00, 703.60it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 573.99it/s]\n"}
-,{"stream_name":"stdout","time":59.56095765,"data":"trainable params: 2,162,688 || all params: 496,195,456 || trainable%: 0.4359\n"}
-,{"stream_name":"stderr","time":64.669781651,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\n"}
-,{"stream_name":"stderr","time":75.952924028,"data":"Traceback (most recent call last):\n"}
-,{"stream_name":"stderr","time":75.953000847,"data":"  File \"/kaggle/src/script.py\", line 180, in \u003cmodule\u003e\n"}
-,{"stream_name":"stderr","time":75.953733812,"data":"    scaler.scale(loss / GRAD_ACCUM).backward()\n"}
-,{"stream_name":"stderr","time":75.953750399,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_tensor.py\", line 630, in backward\n"}
-,{"stream_name":"stderr","time":75.95600514,"data":"    torch.autograd.backward(\n"}
-,{"stream_name":"stderr","time":75.956023411,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/autograd/__init__.py\", line 364, in backward\n"}
-,{"stream_name":"stderr","time":75.957636217,"data":"    _engine_run_backward(\n"}
-,{"stream_name":"stderr","time":75.957651886,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py\", line 865, in _engine_run_backward\n"}
-,{"stream_name":"stderr","time":75.959136615,"data":"    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
-,{"stream_name":"stderr","time":75.960770749,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":75.96078507,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/checkpoint.py\", line 1177, in unpack_hook\n"}
-,{"stream_name":"stderr","time":75.9632407,"data":"    frame.check_recomputed_tensors_match(gid)\n"}
-,{"stream_name":"stderr","time":75.963340422,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/checkpoint.py\", line 921, in check_recomputed_tensors_match\n"}
-,{"stream_name":"stderr","time":75.964027925,"data":"    raise CheckpointError(\n"}
-,{"stream_name":"stderr","time":75.964311619,"data":"torch.utils.checkpoint.CheckpointError: torch.utils.checkpoint: Recomputed values for the following tensors have different metadata than during the forward pass.\n"}
-,{"stream_name":"stderr","time":75.964323754,"data":"tensor at position 27:\n"}
-,{"stream_name":"stderr","time":75.96432900799999,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964334813,"data":"recomputed metadata: {'shape': torch.Size([14, 64, 256]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964340208,"data":"tensor at position 28:\n"}
-,{"stream_name":"stderr","time":75.964345478,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964351753,"data":"recomputed metadata: {'shape': torch.Size([14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.96436933,"data":"tensor at position 29:\n"}
-,{"stream_name":"stderr","time":75.964374653,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964380218,"data":"recomputed metadata: {'shape': torch.Size([1, 1, 512, 256]), 'dtype': torch.bool, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964385443,"data":"tensor at position 30:\n"}
-,{"stream_name":"stderr","time":75.964390336,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964395218,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 32]), 'dtype': torch.int64, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964411381,"data":"tensor at position 31:\n"}
-,{"stream_name":"stderr","time":75.9644165,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964424089,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 8192]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964426778,"data":"tensor at position 32:\n"}
-,{"stream_name":"stderr","time":75.964429071,"data":"saved metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
-,{"stream_name":"stderr","time":75.964448046,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964452197,"data":"tensor at position 33:\n"}
-,{"stream_name":"stderr","time":75.964455949,"data":"saved metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
-,{"stream_name":"stderr","time":75.964459365,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964463184,"data":"tensor at position 34:\n"}
-,{"stream_name":"stderr","time":75.96446838,"data":"saved metadata: {'shape': torch.Size([896, 896]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964472137,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964478071,"data":"tensor at position 35:\n"}
-,{"stream_name":"stderr","time":75.964481396,"data":"saved metadata: {'shape': torch.Size([1, 8192, 896]), 'dtype': torch.bool, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964484959,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.96448849,"data":"tensor at position 36:\n"}
-,{"stream_name":"stderr","time":75.96449177,"data":"saved metadata: {'shape': torch.Size([896, 16]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964495385,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964498996,"data":"tensor at position 37:\n"}
-,{"stream_name":"stderr","time":75.964502232,"data":"saved metadata: {'shape': torch.Size([8192, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964505906,"data":"recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
-,{"stream_name":"stderr","time":75.964509974,"data":"tensor at position 38:\n"}
-,{"stream_name":"stderr","time":75.96451376,"data":"saved metadata: {'shape': torch.Size([16, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964517581,"data":"recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
-,{"stream_name":"stderr","time":75.964521059,"data":"tensor at position 39:\n"}
-,{"stream_name":"stderr","time":75.964524197,"data":"saved metadata: {'shape': torch.Size([8192, 16]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964532245,"data":"recomputed metadata: {'shape': torch.Size([14, 64, 256]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.96453588,"data":"tensor at position 40:\n"}
-,{"stream_name":"stderr","time":75.964539217,"data":"saved metadata: {'shape': torch.Size([1, 8192, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.96454318400001,"data":"recomputed metadata: {'shape': torch.Size([14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964546864,"data":"tensor at position 41:\n"}
-,{"stream_name":"stderr","time":75.964550312,"data":"saved metadata: {'shape': torch.Size([1, 8192, 1]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964554689,"data":"recomputed metadata: {'shape': torch.Size([1, 1, 512, 256]), 'dtype': torch.bool, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964558321,"data":"tensor at position 42:\n"}
-,{"stream_name":"stderr","time":75.964562415,"data":"saved metadata: {'shape': torch.Size([1, 8192, 1]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.96456616,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 32]), 'dtype': torch.int64, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964570425,"data":"tensor at position 43:\n"}
-,{"stream_name":"stderr","time":75.964574111,"data":"saved metadata: {'shape': torch.Size([1, 8192, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964578237,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 8192]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964582549,"data":"tensor at position 44:\n"}
-,{"stream_name":"stderr","time":75.964585504,"data":"saved metadata: {'shape': torch.Size([896]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964589812,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964594072,"data":"tensor at position 45:\n"}
-,{"stream_name":"stderr","time":75.964598004,"data":"saved metadata: {'shape': torch.Size([896, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964601558,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964605595,"data":"tensor at position 46:\n"}
-,{"stream_name":"stderr","time":75.964637222,"data":"saved metadata: {'shape': torch.Size([1, 8192, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964642299,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964646562,"data":"tensor at position 47:\n"}
-,{"stream_name":"stderr","time":75.964650015,"data":"saved metadata: {'shape': torch.Size([896, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964653588,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964657737,"data":"tensor at position 48:\n"}
-,{"stream_name":"stderr","time":75.964666567,"data":"saved metadata: {'shape': torch.Size([1, 8192, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964670399,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964673613,"data":"tensor at position 49:\n"}
-,{"stream_name":"stderr","time":75.964676558,"data":"saved metadata: {'shape': torch.Size([1, 8192, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964679927,"data":"recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
-,{"stream_name":"stderr","time":75.964683245,"data":"tensor at position 50:\n"}
-,{"stream_name":"stderr","time":75.964687929,"data":"saved metadata: {'shape': torch.Size([4864, 896]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
-,{"stream_name":"stderr","time":75.964691275,"data":"recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
-,{"stream_name":"stderr","time":75.964694493,"data":".\n"}
-,{"stream_name":"stderr","time":75.964697605,"data":"\n"}
-,{"stream_name":"stderr","time":75.964700647,"data":"Tip: To see a more detailed error message, either pass `debug=True` to\n"}
-,{"stream_name":"stderr","time":75.964704727,"data":"`torch.utils.checkpoint.checkpoint(...)` or wrap the code block\n"}
-,{"stream_name":"stderr","time":75.964708229,"data":"with `with torch.utils.checkpoint.set_checkpoint_debug_enabled(True):` to\n"}
-,{"stream_name":"stderr","time":75.964711504,"data":"enable checkpoint‑debug mode globally.\n"}
-,{"stream_name":"stderr","time":75.96471552,"data":"\n"}
-,{"stream_name":"stderr","time":76.00528976,"data":"'[Errno 9] Bad file descriptor' thrown while requesting GET https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/resolve/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/sample/10BT/000_00000.parquet\n"}
-,{"stream_name":"stderr","time":76.005413835,"data":"Retrying in 1s [Retry 1/5].\n"}
-,{"stream_name":"stderr","time":77.007157853,"data":"Fatal Python error: PyGILState_Release: thread state 0x7ef0fd621ee0 must be current when releasing\n"}
-,{"stream_name":"stderr","time":77.0071931,"data":"Python runtime state: finalizing (tstate=0x0000000000b8a5b0)\n"}
-,{"stream_name":"stderr","time":77.00719916,"data":"\n"}
-,{"stream_name":"stderr","time":77.007206207,"data":"Thread 0x00007ef2c0d1d480 (most recent call first):\n"}
-,{"stream_name":"stderr","time":77.007209141,"data":"  \u003cno Python frame\u003e\n"}
-,{"stream_name":"stderr","time":77.444475949,"data":"Aborted (core dumped)\n"}
-,{"stream_name":"stderr","time":79.40201784,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
-,{"stream_name":"stderr","time":79.402044405,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
-,{"stream_name":"stderr","time":79.634572994,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
-,{"stream_name":"stderr","time":79.634601872,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
-,{"stream_name":"stderr","time":80.271338109,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
-,{"stream_name":"stderr","time":81.539240829,"data":"[NbConvertApp] Writing 314676 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":5.434450294,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 45.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.500255348,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 46.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.564126145,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 37.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.625729743,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 32.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.706881097,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 104.5 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.948836171,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 56.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":20.935328809,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":20.935373012,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.935381838,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.93538548,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.935388908,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.935392324,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.935432752,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.935439067,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.935444007,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":33.40869274,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":44.267430165,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":59.107191944,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:59,  2.42it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 591.69it/s]\n"}
+,{"stream_name":"stdout","time":60.063823178,"data":"trainable params: 2,162,688 || all params: 496,195,456 || trainable%: 0.4359\n"}
+,{"stream_name":"stderr","time":67.224551574,"data":"[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.\n"}
+,{"stream_name":"stderr","time":78.436197736,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":78.43624425,"data":"  File \"/kaggle/src/script.py\", line 180, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":78.438175114,"data":"    scaler.scale(loss / GRAD_ACCUM).backward()\n"}
+,{"stream_name":"stderr","time":78.438206824,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/_tensor.py\", line 630, in backward\n"}
+,{"stream_name":"stderr","time":78.439868049,"data":"    torch.autograd.backward(\n"}
+,{"stream_name":"stderr","time":78.439888386,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/autograd/__init__.py\", line 364, in backward\n"}
+,{"stream_name":"stderr","time":78.440722745,"data":"    _engine_run_backward(\n"}
+,{"stream_name":"stderr","time":78.440745921,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/autograd/graph.py\", line 865, in _engine_run_backward\n"}
+,{"stream_name":"stderr","time":78.44181206,"data":"    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"}
+,{"stream_name":"stderr","time":78.442105932,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":78.442118861,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/checkpoint.py\", line 1177, in unpack_hook\n"}
+,{"stream_name":"stderr","time":78.443393033,"data":"    frame.check_recomputed_tensors_match(gid)\n"}
+,{"stream_name":"stderr","time":78.443426391,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/utils/checkpoint.py\", line 921, in check_recomputed_tensors_match\n"}
+,{"stream_name":"stderr","time":78.443784388,"data":"    raise CheckpointError(\n"}
+,{"stream_name":"stderr","time":78.443796512,"data":"torch.utils.checkpoint.CheckpointError: torch.utils.checkpoint: Recomputed values for the following tensors have different metadata than during the forward pass.\n"}
+,{"stream_name":"stderr","time":78.44380252,"data":"tensor at position 27:\n"}
+,{"stream_name":"stderr","time":78.443808113,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443813318,"data":"recomputed metadata: {'shape': torch.Size([14, 64, 256]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443818395,"data":"tensor at position 28:\n"}
+,{"stream_name":"stderr","time":78.443828427,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443832084,"data":"recomputed metadata: {'shape': torch.Size([14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443835649,"data":"tensor at position 29:\n"}
+,{"stream_name":"stderr","time":78.443838875,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443842327,"data":"recomputed metadata: {'shape': torch.Size([1, 1, 512, 256]), 'dtype': torch.bool, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443845843,"data":"tensor at position 30:\n"}
+,{"stream_name":"stderr","time":78.443849134,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443852717,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 32]), 'dtype': torch.int64, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443864924,"data":"tensor at position 31:\n"}
+,{"stream_name":"stderr","time":78.443867796,"data":"saved metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443870503,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 8192]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443873066,"data":"tensor at position 32:\n"}
+,{"stream_name":"stderr","time":78.44387563,"data":"saved metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
+,{"stream_name":"stderr","time":78.443878158,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443895427,"data":"tensor at position 33:\n"}
+,{"stream_name":"stderr","time":78.443899402,"data":"saved metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
+,{"stream_name":"stderr","time":78.443903879,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443907988,"data":"tensor at position 34:\n"}
+,{"stream_name":"stderr","time":78.443913081,"data":"saved metadata: {'shape': torch.Size([896, 896]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443917623,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443921572,"data":"tensor at position 35:\n"}
+,{"stream_name":"stderr","time":78.443925129,"data":"saved metadata: {'shape': torch.Size([1, 8192, 896]), 'dtype': torch.bool, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443928944,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443932753,"data":"tensor at position 36:\n"}
+,{"stream_name":"stderr","time":78.443936293,"data":"saved metadata: {'shape': torch.Size([896, 16]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443940242,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443945897,"data":"tensor at position 37:\n"}
+,{"stream_name":"stderr","time":78.443951375,"data":"saved metadata: {'shape': torch.Size([8192, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443955163,"data":"recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
+,{"stream_name":"stderr","time":78.443959501,"data":"tensor at position 38:\n"}
+,{"stream_name":"stderr","time":78.443963334,"data":"saved metadata: {'shape': torch.Size([16, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443967779,"data":"recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
+,{"stream_name":"stderr","time":78.443971171,"data":"tensor at position 39:\n"}
+,{"stream_name":"stderr","time":78.443974303,"data":"saved metadata: {'shape': torch.Size([8192, 16]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443977894,"data":"recomputed metadata: {'shape': torch.Size([14, 64, 256]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443987231,"data":"tensor at position 40:\n"}
+,{"stream_name":"stderr","time":78.443991647,"data":"saved metadata: {'shape': torch.Size([1, 8192, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443995065,"data":"recomputed metadata: {'shape': torch.Size([14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.443998757,"data":"tensor at position 41:\n"}
+,{"stream_name":"stderr","time":78.444001893,"data":"saved metadata: {'shape': torch.Size([1, 8192, 1]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444005575,"data":"recomputed metadata: {'shape': torch.Size([1, 1, 512, 256]), 'dtype': torch.bool, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444009607,"data":"tensor at position 42:\n"}
+,{"stream_name":"stderr","time":78.444022387,"data":"saved metadata: {'shape': torch.Size([1, 8192, 1]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444026725,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 32]), 'dtype': torch.int64, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.44403108,"data":"tensor at position 43:\n"}
+,{"stream_name":"stderr","time":78.444034837,"data":"saved metadata: {'shape': torch.Size([1, 8192, 896]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444038918,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 8192]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444043283,"data":"tensor at position 44:\n"}
+,{"stream_name":"stderr","time":78.444047325,"data":"saved metadata: {'shape': torch.Size([896]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444051328,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444054897,"data":"tensor at position 45:\n"}
+,{"stream_name":"stderr","time":78.444058945,"data":"saved metadata: {'shape': torch.Size([896, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444063108,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444067263,"data":"tensor at position 46:\n"}
+,{"stream_name":"stderr","time":78.444071047,"data":"saved metadata: {'shape': torch.Size([1, 8192, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444075209,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 8192, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444079167,"data":"tensor at position 47:\n"}
+,{"stream_name":"stderr","time":78.444083002,"data":"saved metadata: {'shape': torch.Size([896, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444087365,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512]), 'dtype': torch.float32, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444091661,"data":"tensor at position 48:\n"}
+,{"stream_name":"stderr","time":78.444095234,"data":"saved metadata: {'shape': torch.Size([1, 8192, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444104043,"data":"recomputed metadata: {'shape': torch.Size([1, 14, 512, 64]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444108054,"data":"tensor at position 49:\n"}
+,{"stream_name":"stderr","time":78.444111569,"data":"saved metadata: {'shape': torch.Size([1, 8192, 4864]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444115341,"data":"recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
+,{"stream_name":"stderr","time":78.44412005,"data":"tensor at position 50:\n"}
+,{"stream_name":"stderr","time":78.444123618,"data":"saved metadata: {'shape': torch.Size([4864, 896]), 'dtype': torch.float16, 'device': device(type='cuda', index=0)}\n"}
+,{"stream_name":"stderr","time":78.444127423,"data":"recomputed metadata: {'shape': torch.Size([]), 'dtype': torch.int64, 'device': device(type='cpu')}\n"}
+,{"stream_name":"stderr","time":78.444131132,"data":".\n"}
+,{"stream_name":"stderr","time":78.444134708,"data":"\n"}
+,{"stream_name":"stderr","time":78.444139925,"data":"Tip: To see a more detailed error message, either pass `debug=True` to\n"}
+,{"stream_name":"stderr","time":78.444146994,"data":"`torch.utils.checkpoint.checkpoint(...)` or wrap the code block\n"}
+,{"stream_name":"stderr","time":78.444149832,"data":"with `with torch.utils.checkpoint.set_checkpoint_debug_enabled(True):` to\n"}
+,{"stream_name":"stderr","time":78.444152488,"data":"enable checkpoint‑debug mode globally.\n"}
+,{"stream_name":"stderr","time":78.444155613,"data":"\n"}
+,{"stream_name":"stderr","time":78.496118989,"data":"Got disconnected from remote data host. Retrying in 5sec [1/20]\n"}
+,{"stream_name":"stderr","time":83.501349125,"data":"Fatal Python error: PyGILState_Release: auto-releasing thread-state, but no thread-state for this thread\n"}
+,{"stream_name":"stderr","time":83.501387975,"data":"Python runtime state: finalizing (tstate=0x0000000000b8a5b0)\n"}
+,{"stream_name":"stderr","time":83.501391651,"data":"\n"}
+,{"stream_name":"stderr","time":83.926668422,"data":"Aborted (core dumped)\n"}
+,{"stream_name":"stderr","time":85.77863223599999,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":85.778667515,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":85.971827232,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":85.971854245,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":86.569471731,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":87.69420323,"data":"[NbConvertApp] Writing 313972 bytes to __results__.html\n"}
 ]

@@ -161,20 +161,22 @@ for ids in batches():
     ids = ids.to(device)
     idx = torch.randperm(SEQ_LEN - 1, device=device)[:LM_SAMPLE]
 
-    # both paths share the LoRA and are trainable (paper's bidirectional setup).
-    # NOTE: output_hidden_states=True is incompatible with gradient checkpointing
-    # (recompute-mismatch error), so #5 is relaxed from per-layer to final-layer
-    # alignment -- the feasible version on a single free GPU.
-    SPARSE_ENABLED = False
-    full_last = backbone(input_ids=ids).last_hidden_state
+    # NOTE on #4/#5: a 2nd grad-bearing forward in the OTHER attention mode is
+    # incompatible with gradient checkpointing here -- the global SPARSE_ENABLED
+    # flag flips before the checkpointed recompute runs, so the full path would be
+    # recomputed as sparse (shape mismatch). Robust resolution: keep the proven
+    # teacher(full,no-grad)/student(sparse,grad) structure -> alignment is
+    # unidirectional commitment + final-layer. Items #1,2,3,6,8 are kept in full;
+    # #4 relaxed to unidirectional, #5 to final-layer, #7 dropped.
+    with torch.no_grad():
+        SPARSE_ENABLED = False
+        teacher = backbone(input_ids=ids).last_hidden_state.detach()
     SPARSE_ENABLED = True
-    sparse_last = backbone(input_ids=ids).last_hidden_state
+    student = backbone(input_ids=ids).last_hidden_state
 
-    # #4,#6: bidirectional SmoothL1 (final layer)
-    align = F.smooth_l1_loss(full_last.float(), sparse_last.detach().float()) \
-          + F.smooth_l1_loss(sparse_last.float(), full_last.detach().float())
-
-    lm = sampled_ce(sparse_last, ids, idx) + sampled_ce(full_last, ids, idx)
+    # #6: SmoothL1 (was MSE), weight alpha=10 (was 1); commitment direction
+    align = F.smooth_l1_loss(student.float(), teacher.float())
+    lm = sampled_ce(student, ids, idx)
     loss = lm + ALIGN_WEIGHT * align
 
     scaler.scale(loss / GRAD_ACCUM).backward()
