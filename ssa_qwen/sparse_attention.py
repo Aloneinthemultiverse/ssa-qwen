@@ -21,10 +21,13 @@ import torch.nn.functional as F
 # attention on the same model weights.
 SPARSE_ENABLED = True
 
+# Updated to match the SSA paper's higher-retrieval config (arXiv:2511.20102):
+# block 32 x top-32 ~= 1024 selected tokens (their RF=1024), smaller sliding window.
+# Items 1-3 of the improvement backlog.
 SINK_TOKENS = 4
-WINDOW = 256
-BLOCK_SIZE = 64
-TOP_K_BLOCKS = 8
+WINDOW = 128
+BLOCK_SIZE = 32
+TOP_K_BLOCKS = 32
 QUERY_CHUNK = 512  # rows of the attention bias built at once
 
 

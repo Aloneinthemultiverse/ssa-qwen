@@ -15,7 +15,7 @@ register()
 
 # ---- 1) chunked sparse path must equal the dense reference oracle ----
 torch.manual_seed(0)
-b, h, q_len, d = 1, 4, 300, 16
+b, h, q_len, d = 1, 4, 2048, 16  # > BLOCK*TOP_K so block selection engages
 q = torch.randn(b, h, q_len, d)
 k = torch.randn(b, h, q_len, d)
 v = torch.randn(b, h, q_len, d)
