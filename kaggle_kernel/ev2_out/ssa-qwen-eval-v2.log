@@ -1,0 +1,47 @@
+[{"stream_name":"stdout","time":10.24393471,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 79.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":10.283385238,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 32.1 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":10.324741146,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 23.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":10.364063132,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 18.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":10.436681867,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 58.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":10.572566044,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 95.4 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":33.16951373,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":33.169604871,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":33.169624358,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":33.169629519,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":33.169633745,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":33.169637859,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":33.169641764,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":33.169645569,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":33.169650446,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":62.453235469,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":80.263283215,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":93.854063023,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:54,  2.52it/s]\rLoading weights:  84%|████████▍ | 243/290 [00:00\u003c00:00, 616.40it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 518.94it/s]\n"}
+,{"stream_name":"stdout","time":95.018921928,"data":"adapter: /kaggle/input/datasets/sujitnarrayanm/ssa-qwen-lora-v2  | arch: block32 top32 window128\n"}
+,{"stream_name":"stdout","time":100.117809643,"data":"\n"}
+,{"stream_name":"stdout","time":100.117883094,"data":"=== PERPLEXITY (v2 arch+adapter, YaRN x4, 4 docs) ===\n"}
+,{"stream_name":"stdout","time":100.117889149,"data":"    ctx |     full |  sparse+v2\n"}
+,{"stream_name":"stdout","time":317.880469899,"data":"  32768 |   14.258 |   3066.049\n"}
+,{"stream_name":"stdout","time":1151.677411623,"data":"  65536 |   14.194 |   3060.095\n"}
+,{"stream_name":"stdout","time":4403.226632866,"data":" 131072 |   14.897 |   3081.175\n"}
+,{"stream_name":"stdout","time":4403.226711057,"data":"\n"}
+,{"stream_name":"stdout","time":4403.226721181,"data":"=== RETRIEVAL: FULL (start/mid/end) ===\n"}
+,{"stream_name":"stdout","time":4403.226727775,"data":"    ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":4442.565808917,"data":"  32768 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":4571.770244415,"data":"  65536 | 100% | 100% | 100%\n"}
+,{"stream_name":"stderr","time":4571.858493882,"data":"[transformers] This is a friendly reminder - the current text generation call has exceeded the model's predefined maximum length (131072). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.\n"}
+,{"stream_name":"stdout","time":5048.596461716,"data":" 131072 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":5048.596537979,"data":"\n"}
+,{"stream_name":"stdout","time":5048.596543456,"data":"=== RETRIEVAL: SPARSE+v2 (start/mid/end) ===\n"}
+,{"stream_name":"stdout","time":5048.596547245,"data":"    ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":5342.345788809,"data":"  32768 |   0% |   0% |   0%\n"}
+,{"stream_name":"stdout","time":6462.545700169,"data":"  65536 |   0% |   0% |   0%\n"}
+,{"stream_name":"stdout","time":10858.355287849,"data":" 131072 |   0% |   0% |   0%\n"}
+,{"stream_name":"stdout","time":10858.355372222,"data":"\n"}
+,{"stream_name":"stdout","time":10858.355378449,"data":"done\n"}
+,{"stream_name":"stderr","time":10866.679249498,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":10866.679304544,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":10867.134751629,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":10867.13478675,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":10868.02559695,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":10869.940426615,"data":"[NbConvertApp] Writing 325579 bytes to __results__.html\n"}
+]
