@@ -94,7 +94,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 from peft import PeftModel
 
 MODEL = "Qwen/Qwen2.5-0.5B"
-LENGTHS = [32768, 65536, 131072]
+LENGTHS = [65536, 131072]
 DEPTHS = [0.1, 0.5, 0.9]
 TRIALS = 3
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -157,8 +157,10 @@ def run(label, sparse, adapters):
 
 
 run("FULL", False, False)
-TOP_K_BLOCKS = 8
-run(f"SPARSE top-8 (RF~512)", True, True)
 TOP_K_BLOCKS = 32
-run(f"SPARSE top-32 (RF~2048)", True, True)
+run("SPARSE top-32", True, True)
+TOP_K_BLOCKS = 64
+run("SPARSE top-64", True, True)
+TOP_K_BLOCKS = 128
+run("SPARSE top-128", True, True)
 print("\ndone", flush=True)

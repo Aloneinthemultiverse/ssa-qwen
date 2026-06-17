@@ -126,8 +126,27 @@ working long-context retrieval. So this sparse pattern does NOT replace
 retrieval/RAG for needle-finding -- it keeps the document affordable and coherent,
 not searchable.
 
+**Fixing mid-document retrieval — the selection-budget result (clean ablation,
+same known-good adapter, only top-k varied, 3 trials):**
+
+| | 32k (s/m/e) | 64k (s/m/e) | 128k (s/m/e) |
+|---|---|---|---|
+| Full attention | 100/100/100 | 100/100/100 | 100/100/100 |
+| Sparse top-8  | 100/100/100 | 100/**0**/100 | 100/**0/0** |
+| Sparse top-32 | 100/100/100 | 100/**100**/100 | 100/**0/0** |
+
+Raising the block-selection budget top-8 -> top-32 **fully recovers mid-document
+retrieval at 64k (0% -> 100%)** but not yet at 128k. Mechanism: selected coverage =
+top_k * block / context. At 64k top-32 covers ~3% of the document (enough); at 128k
+the same 32 blocks cover ~1.5% (too few to catch the needle). Implication: **the
+selection budget must scale with context length** to preserve retrieval -- roughly
+top_k proportional to context length. (Note: the v2 attempt to train the adapter
+under YaRN x4 *broke* it -- PPL ~3066 -- so this result uses the un-scaled-trained
+adapter with top-k varied only at inference; SSA reports models adapt to varying
+sparsity budgets at inference, consistent with this working.)
+
 **Honest limitations.** Single 0.5B model, single seed, 8 docs/length (4 for the
-128k run; no error bars yet). Absolute gaps are small (sub-0.3 PPL), so the 128k
+128k run; 3 trials for retrieval; no error bars yet). Absolute gaps are small (sub-0.3 PPL), so the 128k
 crossover wants seed-repeats before it's load-bearing. The attention is a chunked
 *dense-bias simulation* (memory-efficient, verified bit-identical to the dense
 reference, scales to 32k) -- it harvests the modeling behavior, not yet the FLOP
