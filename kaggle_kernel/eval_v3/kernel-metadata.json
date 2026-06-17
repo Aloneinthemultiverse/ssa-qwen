@@ -1,0 +1,15 @@
+{
+  "id": "sujitnarrayanm/ssa-qwen-eval-v3",
+  "title": "ssa-qwen-eval-v3",
+  "code_file": "ssa_eval_v3_kernel.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_internet": "true",
+  "dataset_sources": [
+    "sujitnarrayanm/ssa-qwen-lora-v3"
+  ],
+  "competition_sources": [],
+  "kernel_sources": []
+}
