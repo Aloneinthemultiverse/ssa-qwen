@@ -13,7 +13,8 @@ bidirectional+per-layer is gone. Trains at native RoPE (NO YaRN -- that broke v2
 Saves to /kaggle/working/ssa-qwen-lora-v3-step{N}.
 """
 
-import subprocess, sys
+import subprocess, sys, os
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-U",
                 "transformers>=5.0.0", "peft", "datasets", "accelerate", "torchao>=0.16.0"], check=True)
 
@@ -102,8 +103,8 @@ from peft import LoraConfig, get_peft_model
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL = "Qwen/Qwen2.5-0.5B"
-SEQ_LEN = 4096       # small enough that 2 grad forwards fit WITHOUT checkpointing
-LM_SAMPLE = 1024
+SEQ_LEN = 2048       # 2 grad forwards + per-layer states fit in 16GB, no checkpointing
+LM_SAMPLE = 512
 GRAD_ACCUM = 4
 STEPS = 250
 LR = 1e-4
