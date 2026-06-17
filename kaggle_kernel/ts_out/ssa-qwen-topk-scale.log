@@ -1,0 +1,48 @@
+[{"stream_name":"stdout","time":5.04744719,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 87.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.084181674,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 37.2 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.116755785,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 26.0 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.164349082,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 102.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":5.279480949,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 113.3 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":20.450095858,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":20.450136144,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.450140862,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.450150423,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.450153868,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.450156698,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.450159313,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.450161847,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":20.450164281,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":35.271479826,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":45.847701652,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":53.673415072,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:34,  3.06it/s]\rLoading weights:  80%|████████  | 232/290 [00:00\u003c00:00, 702.76it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 602.53it/s]\n"}
+,{"stream_name":"stdout","time":54.794580559,"data":"adapter (known-good 8k): /kaggle/input/datasets/sujitnarrayanm/ssa-qwen-lora-8k\n"}
+,{"stream_name":"stdout","time":54.797471698,"data":"\n"}
+,{"stream_name":"stdout","time":54.797489951,"data":"=== FULL (start/mid/end) ===\n"}
+,{"stream_name":"stdout","time":54.797495355,"data":"    ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":240.372783818,"data":"  65536 | 100% | 100% | 100%\n"}
+,{"stream_name":"stderr","time":240.453935783,"data":"[transformers] This is a friendly reminder - the current text generation call has exceeded the model's predefined maximum length (131072). Depending on the model, you may observe exceptions, performance degradation, or nothing at all.\n"}
+,{"stream_name":"stdout","time":984.895117934,"data":" 131072 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":984.895187477,"data":"\n"}
+,{"stream_name":"stdout","time":984.895191992,"data":"=== SPARSE top-32 (start/mid/end) ===\n"}
+,{"stream_name":"stdout","time":984.895195381,"data":"    ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":2715.557068799,"data":"  65536 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":9505.789362031,"data":" 131072 | 100% |   0% |   0%\n"}
+,{"stream_name":"stdout","time":9505.789438127,"data":"\n"}
+,{"stream_name":"stdout","time":9505.789450287,"data":"=== SPARSE top-64 (start/mid/end) ===\n"}
+,{"stream_name":"stdout","time":9505.789453767,"data":"    ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":11239.519816541,"data":"  65536 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":18042.168049951,"data":" 131072 | 100% |   0% |  67%\n"}
+,{"stream_name":"stdout","time":18042.168124423,"data":"\n"}
+,{"stream_name":"stdout","time":18042.16813058,"data":"=== SPARSE top-128 (start/mid/end) ===\n"}
+,{"stream_name":"stdout","time":18042.168135395,"data":"    ctx | d=0.1 | d=0.5 | d=0.9\n"}
+,{"stream_name":"stdout","time":19778.467152232,"data":"  65536 | 100% | 100% | 100%\n"}
+,{"stream_name":"stdout","time":26593.624669935,"data":" 131072 | 100% |  33% | 100%\n"}
+,{"stream_name":"stdout","time":26593.624756856,"data":"\n"}
+,{"stream_name":"stdout","time":26593.624764933,"data":"done\n"}
+,{"stream_name":"stderr","time":26598.779812716,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":26598.779858547,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":26599.035115179,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":26599.035145321,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":26599.677691733,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":26600.991866524,"data":"[NbConvertApp] Writing 313893 bytes to __results__.html\n"}
+]

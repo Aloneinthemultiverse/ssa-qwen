@@ -145,6 +145,23 @@ under YaRN x4 *broke* it -- PPL ~3066 -- so this result uses the un-scaled-train
 adapter with top-k varied only at inference; SSA reports models adapt to varying
 sparsity budgets at inference, consistent with this working.)
 
+**Budget-scaling at 128k (block budget vs retrieval depth, 3 trials):**
+
+| 128k context | start | mid | end |
+|---|---|---|---|
+| Full attention | 100% | 100% | 100% |
+| Sparse top-32 | 100% | 0% | 0% |
+| Sparse top-64 | 100% | 0% | 67% |
+| Sparse top-128 | 100% | 33% | 100% |
+
+Scaling the block budget monotonically recovers retrieval: at 64k a modest budget
+(top-32) already matches full attention everywhere; at 128k a larger budget fully
+recovers the document END (top-128 -> 100%) but only PARTIALLY the MIDDLE (0 -> 33%).
+=> Two regimes: (a) at moderate extension, budget-scaling fully restores retrieval;
+(b) at extreme (4x) extension a residual mid-document wall remains that budget alone
+does not close -- consistent with positional (RoPE/YaRN) distortion peaking deep in
+the stretched context, on top of the coverage effect.
+
 **Honest limitations.** Single 0.5B model, single seed, 8 docs/length (4 for the
 128k run; 3 trials for retrieval; no error bars yet). Absolute gaps are small (sub-0.3 PPL), so the 128k
 crossover wants seed-repeats before it's load-bearing. The attention is a chunked
