@@ -1,0 +1,1 @@
+{ "id": "sujitnarrayan/ssa-qwen-eval-nsa2", "title": "ssa-qwen-eval-nsa2", "code_file": "ssa_eval_nsa2_kernel.py", "language": "python", "kernel_type": "script", "is_private": "true", "enable_gpu": "true", "enable_internet": "true", "dataset_sources": ["sujitnarrayan/nsa2-qwen-lora"], "competition_sources": [], "kernel_sources": [] }
