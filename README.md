@@ -162,8 +162,29 @@ recovers the document END (top-128 -> 100%) but only PARTIALLY the MIDDLE (0 -> 
 does not close -- consistent with positional (RoPE/YaRN) distortion peaking deep in
 the stretched context, on top of the coverage effect.
 
-**Honest limitations.** Single 0.5B model, single seed, 8 docs/length (4 for the
-128k run; 3 trials for retrieval; no error bars yet). Absolute gaps are small (sub-0.3 PPL), so the 128k
+**Headline: the full SSA training recipe breaks the 128k mid-document wall.**
+
+Two adapters, identical eval, buried-fact retrieval (start/mid/end):
+
+| 128k context | top-32 | top-64 | top-128 |
+|---|---|---|---|
+| simple adapter (unidirectional, final-layer align) | 100/**0**/0 | 100/**0**/67 | 100/**33**/100 |
+| **v3 adapter (bidirectional + per-layer + SmoothL1 a10)** | 100/**100**/100 | 100/100/100 | 100/100/100 |
+
+The v3 adapter -- trained with the paper's full recipe (items 4-7: bidirectional
+sparsity+commitment alignment, per-layer over all hidden states, SmoothL1, alpha=10,
+both paths trained) at native RoPE, seq 2048 -- achieves **100% retrieval at every
+depth and every budget out to 128k**, including the document middle that the
+simpler adapter could only reach 33% on (and only at 4x the budget). Training
+alignment near-perfectly (align loss 0.0008) makes the block *selection* reliably
+pick the needle even at <1% coverage. So the mid-document wall was NOT purely
+positional -- proper alignment training closes it, and at the *cheapest* budget
+(top-32). This is a clean replication-and-extension of SSA's core claim on a 0.5B
+model for $0.
+
+**Honest limitations.** Single 0.5B model, single seed, 3 trials/cell, passkey-only
+task (easiest retrieval test), dense-mask simulation (cost savings not yet
+harvested). Needs seeds + a harder task + a second model size before paper-grade. Absolute gaps are small (sub-0.3 PPL), so the 128k
 crossover wants seed-repeats before it's load-bearing. The attention is a chunked
 *dense-bias simulation* (memory-efficient, verified bit-identical to the dense
 reference, scales to 32k) -- it harvests the modeling behavior, not yet the FLOP
