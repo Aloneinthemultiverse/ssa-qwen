@@ -41,6 +41,7 @@ class NSAModule(nn.Module):
             self.gate.bias.copy_(torch.tensor([-4.0, 4.0, 4.0]))
 
     def compress(self, k, v):
+        k = k.float(); v = v.float()   # AMP-safe: NSA params are fp32, compute here in fp32
         b, h, kv, d = k.shape
         nb = (kv + self.l_cmp - 1) // self.l_cmp
         pad = nb * self.l_cmp - kv

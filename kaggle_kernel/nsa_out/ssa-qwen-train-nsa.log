@@ -1,45 +1,95 @@
-[{"stream_name":"stdout","time":5.71659095,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 105.2 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.743141051,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 34.5 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.766883002,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 31.6 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.786301001,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 29.6 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.831703301,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 92.5 MB/s eta 0:00:00\n"}
-,{"stream_name":"stdout","time":5.9819317850000004,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 81.5 MB/s eta 0:00:00\n"}
-,{"stream_name":"stderr","time":21.981362134,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
-,{"stream_name":"stderr","time":21.981428109,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.98143503,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.98144088,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.981446508,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.981451871,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.981456588,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.981461175,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
-,{"stream_name":"stderr","time":21.981465732,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
-,{"stream_name":"stderr","time":36.866051037,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
-,{"stream_name":"stderr","time":48.715330056,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
-,{"stream_name":"stderr","time":54.714287738,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:31,  3.17it/s]\rLoading weights:  84%|████████▍ | 243/290 [00:00\u003c00:00, 750.76it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 624.26it/s]\n"}
-,{"stream_name":"stdout","time":55.654728056,"data":"trainable params: 8,507,976 || all params: 502,540,744 || trainable%: 1.6930\n"}
-,{"stream_name":"stdout","time":55.657158306,"data":"attached NSA to 24 layers; NSA params 6,345,288\n"}
-,{"stream_name":"stderr","time":64.803320605,"data":"Traceback (most recent call last):\n"}
-,{"stream_name":"stderr","time":64.803366133,"data":"  File \"/kaggle/src/script.py\", line 199, in \u003cmodule\u003e\n"}
-,{"stream_name":"stderr","time":64.804009013,"data":"    scaler.step(opt); scaler.update(); opt.zero_grad(); accum = 0\n"}
-,{"stream_name":"stderr","time":64.804359833,"data":"    ^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":64.804374585,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/amp/grad_scaler.py\", line 457, in step\n"}
-,{"stream_name":"stderr","time":64.806741812,"data":"    self.unscale_(optimizer)\n"}
-,{"stream_name":"stderr","time":64.806907368,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/amp/grad_scaler.py\", line 343, in unscale_\n"}
-,{"stream_name":"stderr","time":64.807657824,"data":"    optimizer_state[\"found_inf_per_device\"] = self._unscale_grads_(\n"}
-,{"stream_name":"stderr","time":64.808704351,"data":"                                              ^^^^^^^^^^^^^^^^^^^^^\n"}
-,{"stream_name":"stderr","time":64.808792984,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/amp/grad_scaler.py\", line 261, in _unscale_grads_\n"}
-,{"stream_name":"stderr","time":64.809210524,"data":"    raise ValueError(\"Attempting to unscale FP16 gradients.\")\n"}
-,{"stream_name":"stderr","time":64.809314406,"data":"ValueError: Attempting to unscale FP16 gradients.\n"}
-,{"stream_name":"stderr","time":64.856935789,"data":"'[Errno 9] Bad file descriptor' thrown while requesting GET https://huggingface.co/datasets/HuggingFaceFW/fineweb-edu/resolve/87f09149ef4734204d70ed1d046ddc9ca3f2b8f9/sample/10BT/000_00000.parquet\n"}
-,{"stream_name":"stderr","time":64.856961756,"data":"Retrying in 1s [Retry 1/5].\n"}
-,{"stream_name":"stderr","time":65.858352308,"data":"Fatal Python error: PyGILState_Release: auto-releasing thread-state, but no thread-state for this thread\n"}
-,{"stream_name":"stderr","time":65.858394173,"data":"Python runtime state: finalizing (tstate=0x0000000000b8a5b0)\n"}
-,{"stream_name":"stderr","time":65.858398813,"data":"\n"}
-,{"stream_name":"stderr","time":66.230537189,"data":"Aborted (core dumped)\n"}
-,{"stream_name":"stderr","time":68.19787167,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
-,{"stream_name":"stderr","time":68.197897786,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
-,{"stream_name":"stderr","time":68.433587455,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
-,{"stream_name":"stderr","time":68.43361393,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
-,{"stream_name":"stderr","time":69.056807331,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
-,{"stream_name":"stderr","time":70.33153828,"data":"[NbConvertApp] Writing 326344 bytes to __results__.html\n"}
+[{"stream_name":"stdout","time":6.588637424,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.2/11.2 MB 47.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":6.650655399,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 680.7/680.7 kB 44.9 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":6.709557245,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 555.1/555.1 kB 40.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":6.767812295,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 389.2/389.2 kB 29.8 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":6.847563141,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.2/3.2 MB 96.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stdout","time":7.079449255,"data":"   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.2/12.2 MB 58.6 MB/s eta 0:00:00\n"}
+,{"stream_name":"stderr","time":22.550372275,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":22.550411539,"data":"dask-cuda 26.2.0 requires cuda-core==0.3.*, but you have cuda-core 1.0.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.550416723,"data":"dask-cuda 26.2.0 requires numba-cuda\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.550421636,"data":"distributed-ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.55042635,"data":"cuml-cu12 26.2.0 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.550430705,"data":"cuml-cu12 26.2.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.550435239,"data":"ucxx-cu12 0.48.0 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.1, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.550439924,"data":"cudf-cu12 26.2.1 requires numba\u003c0.62.0,\u003e=0.60.0, but you have numba 0.65.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":22.550444427,"data":"cudf-cu12 26.2.1 requires numba-cuda[cu12]\u003c0.23.0,\u003e=0.22.2, but you have numba-cuda 0.30.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":34.920040006,"data":"Skipping import of cpp extensions due to incompatible torch version. Please upgrade to torch \u003e= 2.11.0 (found 2.10.0+cu128).\n"}
+,{"stream_name":"stderr","time":46.030723027,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":62.575710592,"data":"\rLoading weights:   0%|          | 0/290 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/290 [00:00\u003c01:18,  3.66it/s]\rLoading weights:  71%|███████▏  | 207/290 [00:00\u003c00:00, 695.87it/s]\rLoading weights: 100%|██████████| 290/290 [00:00\u003c00:00, 617.85it/s]\n"}
+,{"stream_name":"stdout","time":63.7006627,"data":"trainable params: 8,507,976 || all params: 502,540,744 || trainable%: 1.6930\n"}
+,{"stream_name":"stdout","time":63.702701498,"data":"attached NSA to 24 layers; NSA params 6,345,288\n"}
+,{"stream_name":"stderr","time":72.12031889,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":72.120356159,"data":"  File \"/kaggle/src/script.py\", line 190, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":72.120542182,"data":"    s_out = backbone(input_ids=ids, output_hidden_states=True)\n"}
+,{"stream_name":"stderr","time":72.120694664,"data":"            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.120736094,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":72.122304238,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.12232072,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.122326463,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n"}
+,{"stream_name":"stderr","time":72.122776027,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.122791527,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.122833753,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/utils/generic.py\", line 1036, in wrapper\n"}
+,{"stream_name":"stderr","time":72.123195345,"data":"    output = func(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.123267229,"data":"             ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.123342966,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/utils/output_capturing.py\", line 252, in wrapper\n"}
+,{"stream_name":"stderr","time":72.123533445,"data":"    outputs = func(self, *args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.123593094,"data":"              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.123664472,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2/modeling_qwen2.py\", line 399, in forward\n"}
+,{"stream_name":"stderr","time":72.12393608,"data":"    hidden_states = decoder_layer(\n"}
+,{"stream_name":"stderr","time":72.123952706,"data":"                    ^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.12396742,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/modeling_layers.py\", line 93, in __call__\n"}
+,{"stream_name":"stderr","time":72.124130709,"data":"    return super().__call__(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.124237887,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.12424551,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":72.12471494,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.124791084,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.124799058,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1882, in _call_impl\n"}
+,{"stream_name":"stderr","time":72.125264557,"data":"    return inner()\n"}
+,{"stream_name":"stderr","time":72.125283938,"data":"           ^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.125291021,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1830, in inner\n"}
+,{"stream_name":"stderr","time":72.125693045,"data":"    result = forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.125747315,"data":"             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.125783358,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2/modeling_qwen2.py\", line 293, in forward\n"}
+,{"stream_name":"stderr","time":72.126032075,"data":"    hidden_states, _ = self.self_attn(\n"}
+,{"stream_name":"stderr","time":72.126064057,"data":"                       ^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.12614349,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":72.126501967,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.126567299,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.126586425,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1882, in _call_impl\n"}
+,{"stream_name":"stderr","time":72.127032099,"data":"    return inner()\n"}
+,{"stream_name":"stderr","time":72.127045587,"data":"           ^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.127125754,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1830, in inner\n"}
+,{"stream_name":"stderr","time":72.127526601,"data":"    result = forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.127545495,"data":"             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.127591681,"data":"  File \"/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2/modeling_qwen2.py\", line 231, in forward\n"}
+,{"stream_name":"stderr","time":72.127851697,"data":"    attn_output, attn_weights = attention_interface(\n"}
+,{"stream_name":"stderr","time":72.127865312,"data":"                                ^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.127878975,"data":"  File \"/kaggle/src/script.py\", line 97, in nsa_sparse_attention\n"}
+,{"stream_name":"stderr","time":72.12808674,"data":"    ck, cv, n_cmp = nsa.compress(key, value)\n"}
+,{"stream_name":"stderr","time":72.128106587,"data":"                    ^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.128130786,"data":"  File \"/kaggle/src/script.py\", line 50, in compress\n"}
+,{"stream_name":"stderr","time":72.128282967,"data":"    cv = self.compress_v(vb.reshape(b, h, nb, self.l_cmp * d))\n"}
+,{"stream_name":"stderr","time":72.128437531,"data":"         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.128453897,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1776, in _wrapped_call_impl\n"}
+,{"stream_name":"stderr","time":72.128922366,"data":"    return self._call_impl(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.128994816,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.129069463,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py\", line 1787, in _call_impl\n"}
+,{"stream_name":"stderr","time":72.129450139,"data":"    return forward_call(*args, **kwargs)\n"}
+,{"stream_name":"stderr","time":72.129511404,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.129701767,"data":"  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/linear.py\", line 134, in forward\n"}
+,{"stream_name":"stderr","time":72.130292608,"data":"    return F.linear(input, self.weight, self.bias)\n"}
+,{"stream_name":"stderr","time":72.130347723,"data":"           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":72.130392686,"data":"RuntimeError: expected mat1 and mat2 to have the same dtype, but got: c10::Half != float\n"}
+,{"stream_name":"stderr","time":72.472000891,"data":"Fatal Python error: PyGILState_Release: thread state 0x7c4a7f3acbe0 must be current when releasing\n"}
+,{"stream_name":"stderr","time":72.472027967,"data":"Python runtime state: finalizing (tstate=0x0000000000b8a5b0)\n"}
+,{"stream_name":"stderr","time":72.472031187,"data":"\n"}
+,{"stream_name":"stderr","time":72.472033936,"data":"Thread 0x00007c4c70673480 (most recent call first):\n"}
+,{"stream_name":"stderr","time":72.472037959,"data":"  \u003cno Python frame\u003e\n"}
+,{"stream_name":"stderr","time":72.822639612,"data":"Aborted (core dumped)\n"}
+,{"stream_name":"stderr","time":74.722859475,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":74.72288735,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":74.923317232,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":74.923342122,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":75.558270913,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":76.71211416,"data":"[NbConvertApp] Writing 327246 bytes to __results__.html\n"}
 ]
