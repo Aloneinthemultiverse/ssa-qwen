@@ -1,3 +1,6 @@
+import subprocess, sys, os
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+subprocess.run([sys.executable, "-m", "pip", "install", "-q", "-U", "transformers>=5.0.0", "peft", "datasets", "accelerate", "torchao>=0.16.0"], check=True)
 """NSA-style attention for Qwen, REDESIGNED so the compression branch can only help.
 
 Lessons from the failed v1 (0% retrieval): a flatten->Linear compression with random
@@ -148,6 +151,62 @@ def nsa_sparse_attention(module, query, key, value, attention_mask, scaling=None
     return out.transpose(1, 2).contiguous(), None
 
 
-def register():
-    from transformers.modeling_utils import AttentionInterface
-    AttentionInterface.register("nsa_sparse", nsa_sparse_attention)
+
+from transformers.modeling_utils import AttentionInterface
+AttentionInterface.register("nsa_sparse", nsa_sparse_attention)
+
+from datasets import load_dataset
+from peft import LoraConfig, get_peft_model
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+MODEL = "Qwen/Qwen2.5-0.5B"
+SEQ_LEN = 2048; LM_SAMPLE = 512; GRAD_ACCUM = 4; STEPS = 300; LR = 1e-4; ALIGN_WEIGHT = 10.0
+device = "cuda" if torch.cuda.is_available() else "cpu"
+dtype = torch.float16 if device == "cuda" else torch.float32
+tokenizer = AutoTokenizer.from_pretrained(MODEL)
+model = AutoModelForCausalLM.from_pretrained(MODEL, dtype=dtype)
+model.set_attn_implementation("nsa_sparse")
+model.to(device)
+lora = LoraConfig(r=16, lora_alpha=32, lora_dropout=0.05, target_modules=["q_proj","k_proj","v_proj","o_proj"], task_type="CAUSAL_LM")
+model = get_peft_model(model, lora)
+n_nsa = attach_nsa(model, device, torch.float32)
+model.print_trainable_parameters()
+nsa_params=[p for nm,p in model.named_parameters() if ".nsa." in nm]
+for p in nsa_params: p.requires_grad_(True)
+print(f"attached NSA to {n_nsa} layers; NSA params {sum(p.numel() for p in nsa_params):,}", flush=True)
+clm=model.base_model.model; backbone=clm.model; lm_head=clm.lm_head
+ds=load_dataset("HuggingFaceFW/fineweb-edu", name="sample-10BT", split="train", streaming=True)
+def batches():
+    buf=[]
+    for ex in ds:
+        buf.extend(tokenizer(ex["text"]).input_ids+[tokenizer.eos_token_id])
+        while len(buf)>=SEQ_LEN:
+            yield torch.tensor(buf[:SEQ_LEN]).unsqueeze(0); buf=buf[SEQ_LEN:]
+def sampled_ce(hidden, ids, idx):
+    logits=lm_head(hidden[:,idx]).float()
+    return F.cross_entropy(logits.reshape(-1,logits.shape[-1]), ids[:,idx+1].reshape(-1))
+opt=torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=LR)
+scaler=torch.amp.GradScaler("cuda", enabled=device=="cuda")
+model.train(); step=0; accum=0
+for ids in batches():
+    ids=ids.to(device); idx=torch.randperm(SEQ_LEN-1, device=device)[:LM_SAMPLE]
+    with torch.no_grad(), model.disable_adapter():
+        SPARSE_ENABLED=False
+        teacher=backbone(input_ids=ids, output_hidden_states=True).hidden_states
+    SPARSE_ENABLED=True
+    s_out=backbone(input_ids=ids, output_hidden_states=True)
+    align=0.0
+    for hf,hs in zip(teacher, s_out.hidden_states):
+        align=align+F.smooth_l1_loss(hs.float(), hf.float())
+    align=align/len(teacher)
+    lm=sampled_ce(s_out.last_hidden_state, ids, idx)
+    loss=lm+ALIGN_WEIGHT*align
+    scaler.scale(loss/GRAD_ACCUM).backward(); accum+=1
+    if accum==GRAD_ACCUM:
+        scaler.step(opt); scaler.update(); opt.zero_grad(); accum=0; step+=1
+        if step%10==0: print(f"step {step}  lm {lm.item():.4f}  align {align.item():.4f}", flush=True)
+        if step%100==0 or step==STEPS:
+            model.save_pretrained(f"/kaggle/working/nsa2-qwen-lora-step{step}")
+            torch.save({nm:p.detach().cpu() for nm,p in model.named_parameters() if ".nsa." in nm}, f"/kaggle/working/nsa2-modules-step{step}.pt")
+        if step>=STEPS: break
+print("done")
