@@ -95,6 +95,7 @@ def nsa_sparse_attention(module, query, key, value, attention_mask, scaling=None
 
     nsa = module.nsa
     ck, cv, n_cmp = nsa.compress(key, value)
+    ck = ck.to(query.dtype); cv = cv.to(query.dtype)   # NSA params are fp32 (AMP); cast back
     cmp_block_end = (torch.arange(n_cmp, device=device) + 1) * L_CMP - 1
     k_pos = torch.arange(kv_len, device=device)
     neg = torch.finfo(query.dtype).min
@@ -123,7 +124,7 @@ def nsa_sparse_attention(module, query, key, value, attention_mask, scaling=None
                            torch.full((), neg, dtype=query.dtype, device=device))
         sw_out = F.scaled_dot_product_attention(q, key, value, attn_mask=bias, dropout_p=dropout, scale=scaling)
 
-        g = torch.sigmoid(nsa.gate(q))
+        g = torch.sigmoid(nsa.gate(q.float())).to(query.dtype)   # gate is fp32
         out[:, :, s:e] = g[..., 0:1] * cmp_out + (g[..., 1:2] + g[..., 2:3]) * 0.5 * sw_out
     return out.transpose(1, 2).contiguous(), None
 
@@ -148,7 +149,7 @@ model.to(device)
 lora = LoraConfig(r=16, lora_alpha=32, lora_dropout=0.05,
                   target_modules=["q_proj", "k_proj", "v_proj", "o_proj"], task_type="CAUSAL_LM")
 model = get_peft_model(model, lora)
-n_nsa = attach_nsa(model, device, dtype)          # NEW trainable modules (after PEFT)
+n_nsa = attach_nsa(model, device, torch.float32)  # NEW trainable modules in fp32 (AMP-safe)
 model.print_trainable_parameters()
 nsa_params = [p for nm, p in model.named_parameters() if ".nsa." in nm]
 for p in nsa_params:
